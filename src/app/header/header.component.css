@@ -1,0 +1,11 @@
+.navbar{
+background-color: rgb(108, 20, 223);
+line-height: 50px;
+}
+li{
+    display: flex;
+
+}
+a{
+    text-decoration: none;
+}
