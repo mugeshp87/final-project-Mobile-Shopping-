@@ -1,12 +1,25 @@
-
+<div [hidden]="submitted">Submitted Successfully</div>
 <div class="formcontainer">
-<form #loginform style="text-align: center;">
+<form #loginform="ngForm" style="text-align: center;"  (submit)="Onsubmit(loginform)">
   <label for="username">Username</label>
-  <input type="text" class="username" maxlength="8" required>
+  <input type="text" #name="ngModel" class="form-control" maxlength="8" required  name="username" [(ngModel)]="login.username">
   <pre></pre>
   <label for="password">Password</label>
-  <input type="password" class="password" maxlength="5" required>
+  <input type="password"  class="form-control" maxlength="5" required name="password"  [(ngModel)]="login.password"> 
   <pre></pre>
-<input type="submit" >
+  <select [(ngModel)]="select" name="select">
+    <option value="1">Admin
+    </option>
+    <option value="2">
+      User
+    </option>
+  </select>
+  <pre></pre>
+<input type="submit" class="btn btn-primary" >
 </form>
-</div>
+<pre></pre>
+<a href="">Forgot Password?</a>
+</div>  
+{{login|json}}
+{{loginform.value|json}}
+

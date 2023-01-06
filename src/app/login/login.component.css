@@ -3,12 +3,24 @@ label,input{
 
 }
 .formcontainer{
-    background-color: rgb(18, 139, 245);
-    height: 300px;
-    width: 300px;
+    background-color: rgb(18, 139, 245,0.3);
+    height: 500px;
+    width: 500px;
     position:relative;
-    left:300px;
-    box-shadow: 0 5px 10px #b81515;
+    left:500px;
+    box-shadow: 0 5px 10px #b81515,0 5px 20px rgb(0, 191, 255);
     padding: 30px;
+
+}
+.btn{
+background-color: rgb(0, 95, 13);
+width:200px;
+padding: 10px;
+} 
+form{
+margin-top: 30px;
 }
 
+.ng-invalid:not(form){
+    background-color: #b81515;
+}

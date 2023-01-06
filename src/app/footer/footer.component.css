@@ -1,7 +1,15 @@
 .footer{
     background-color: #242329;
     height: 300px;
+    color: white;
 }
 h1{
     color: white;
+}
+hr{
+    color: white;
+    font-weight: 800;
+}
+i{
+    size: 40px;
 }
