@@ -1,4 +1,25 @@
-<form>
-  <input type="text" >
-</form>
-<router-outlet></router-outlet>
+<form [formGroup]="signupform">
+  <h1>Signup Form</h1>
+  <label>Username</label>
+  <input type="text" formControlName="Username">
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('required')&&signupform.get('Username')?.touched">Username is required</div>
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('minlength')&&signupform.get('Username')?.touched">Username should be minimum of 5 characters </div>
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('maxlength')&&signupform.get('Username')?.touched">Username should have a maximum of 10 characters </div>
+  
+  <br>
+  <label>Email</label>
+  <input type="text" formControlName ="Email">
+<br>
+<label>Password</label>
+<input type="password" formControlName="Password">
+<!-- <div formArrayName="users">
+  <label>Users</label>
+  <div *ngFor="let formctrl of frmarr.controls;let i=index">
+    <input type="text" [formControlName]="i">  
+  </div> -->
+  <div formArrayName="users">
+  <div *ngFor="let control of getControls(signupform,'users');let i=index" [formGroupName]="i" >
+   <input type="text" [formControlName]="i">
+    
+<button class="btn btn-primary" type="submit" (click)="registeruser()" [disabled]="!signupform.valid">Submit</button>  
+<br><button class="btn btn-primary" (click)="resetform()">Reset</button>

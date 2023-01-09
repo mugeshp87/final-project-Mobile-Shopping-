@@ -14,11 +14,24 @@ select='any';
 
   ngOnInit() {
   }
+
   login=new Login("mugesh","hello")
 
   Onsubmit(use:NgForm)
   {
 console.log(use.value)
-
+}
+resetform(rform:NgForm)
+{
+  rform.reset()
+}
+setvalues(setvalue:NgForm)
+{
+  let logindetails={
+    username:'diwahar',
+    password:'Diwa',
+    select:'3'
+  }
+setvalue.setValue(logindetails)
 }
 }
