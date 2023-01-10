@@ -15,7 +15,7 @@ select='any';
   ngOnInit() {
   }
 
-  login=new Login("mugesh","hello")
+  login=new Login("muge","hello")
 
   Onsubmit(use:NgForm)
   {

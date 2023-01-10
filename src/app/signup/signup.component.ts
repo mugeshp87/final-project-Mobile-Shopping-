@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class SignupComponent implements OnInit {
   signupform!: FormGroup;
   
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private signservice:SignupService) { }
 
   ngOnInit() {
   //   this.signupform=new FormGroup({
@@ -24,29 +25,29 @@ export class SignupComponent implements OnInit {
 
   this.signupform=this.fb.group({
   'Username':new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),   
-   'Email':new FormControl(''),
-   'Password':new FormControl(''),
+   'Email':new FormControl('',Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")),
+   'Password':new FormControl('',Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")),
   //  'users':new FormArray([new FormControl(''),
   //  new FormControl('')
   //  ])
-  'users':this.fb.group({
-    'name':new FormControl('mugesh'),
-    'age':new FormControl('14')
-  })
+  // 'users':this.fb.group({
+  //   'name':new FormControl('mugesh'),
+  //   'age':new FormControl('14')
+  // })
 
 })
-this.signupform.controls['users'].patchValue(["team"]);
+// this.signupform.controls['users'].patchValue(["team"]);
 
   
-this.signupform.statusChanges.subscribe(data=>{
-  console.log(data)
-})
-const modeluser={
-  Username:"",
-  Email:"muthusri@rhfj",
-  Password:"ghijfefi"
-}
-this.signupform.setValue(modeluser)
+// this.signupform.statusChanges.subscribe(data=>{
+//   console.log(data)
+// })
+// const modeluser={
+//   Username:"",
+//   Email:"muthusri@rhfj",
+//   Password:"ghijfefi"
+// }
+// this.signupform.setValue(modeluser)
 // this.signupform.patchValue(modeluser)
   
 }
@@ -54,13 +55,13 @@ this.signupform.setValue(modeluser)
 // {
 //   return this.signupform.controls['users'] as FormArray;
 // } 
-getControls(form:FormGroup,key:string)
-{
-return (<FormArray>form.controls[key]).controls
-}
-  registeruser(){
-  console.log(this.signupform?.value)
- console.log(this.signupform.get("Password")?.value)
+// getControls(form:FormGroup,key:string)
+// {
+// return (<FormArray>form.controls[key]).controls
+// }
+  registerusers(){
+  this.signservice.addusers(this.signupform.value).subscribe();
+//  console.log(this.signupform.get("Password")?.value)
 
 // console.log(this.signupform.get('Username')?.valueChanges.subscribe(data=>{
 //   console.log(data)

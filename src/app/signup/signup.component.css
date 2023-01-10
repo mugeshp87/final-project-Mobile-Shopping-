@@ -1,0 +1,36 @@
+.formdiv{
+    margin: 100px;
+    background-color:rgba(96, 151, 171, 0.454);
+    height:550px;
+    width:550px;
+    box-shadow: 0 5px 10px #046875,0 5px 20px rgb(238, 174, 111);
+    padding: 30px;
+    margin: 100px;
+    margin-left: 600px;
+}
+form{
+    padding-top: 38px;
+    padding-left: 50px;
+}
+h1{
+    margin-left: 70px;
+}
+label,input{
+    padding:10px;
+    
+}
+input{
+    width: 400px;
+}
+.btn{
+margin: 10px;
+    
+}
+.ng-invalid:not(form){
+    background-color: #b81515;
+    border-color: #b81515;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,47 @@
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500px;
+    font-weight: bolder;
+  }
+h2[class="title"]
+{
+        font-family:'sofia',serif;
+        font-size: 50px;
+        font-weight: bolder;
+        color:rgb(189, 6, 164);
+        margin-left: 750px;
+}
+.categoryimage{
+    display: flex;
+    margin-left: 50px;
+}
+.categoryimage img{
+ margin:100px
+}
+.categoryimage img:hover{
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  div[class=categoryimage] a:hover{
+    background-color: #ffffff;
+    border-bottom: 1ch ridge black;
+  }
+  .firstsection{
+    color: brown;
+    margin-left: 150px;
+    font-weight: 400 bolder;
+    font-size: larger;
+  }
+   .secondsection{
+    color: brown;
+    margin-left: 190px;
+    font-weight: 400 bolder;
+    font-size: larger;
+   } 
+   .thirdsection{
+    color: brown;
+    margin-left: 200px;
+    font-weight: 400 bolder;
+    font-size: larger;
+  }
