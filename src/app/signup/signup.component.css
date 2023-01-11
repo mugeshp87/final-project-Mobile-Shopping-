@@ -28,7 +28,9 @@ margin: 10px;
 }
 .ng-invalid:not(form){
     background-color: #b81515;
-    border-color: #b81515;
+}
+.ng-valid{
+    border:2px solid lightgreen;
 }
 a{
     text-decoration: none;

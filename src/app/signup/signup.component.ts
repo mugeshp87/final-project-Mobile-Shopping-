@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { SignupService } from './signup.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { SignupService } from './signup.service';
 })
 export class SignupComponent implements OnInit {
   signupform!: FormGroup;
+users: any;
   
-  constructor(private fb:FormBuilder,private signservice:SignupService) { }
+  constructor(private fb:FormBuilder,private signservice:SignupService,private router:Router) { }
 
   ngOnInit() {
   //   this.signupform=new FormGroup({
@@ -24,9 +26,9 @@ export class SignupComponent implements OnInit {
 
 
   this.signupform=this.fb.group({
-  'Username':new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),   
-   'Email':new FormControl('',Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")),
-   'Password':new FormControl('',Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")),
+  'Username':new FormControl('mugeshp',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),   
+   'Email':new FormControl('muge9@gmail.com',[Validators.required,Validators.minLength(5),Validators.maxLength(15),Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
+   'Password':new FormControl('Rajmugeshp@8',[Validators.required,Validators.maxLength(12),Validators.minLength(5),Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")]),
   //  'users':new FormArray([new FormControl(''),
   //  new FormControl('')
   //  ])
@@ -60,7 +62,11 @@ export class SignupComponent implements OnInit {
 // return (<FormArray>form.controls[key]).controls
 // }
   registerusers(){
-  this.signservice.addusers(this.signupform.value).subscribe();
+  this.signservice.addusers(this.signupform.value).subscribe(res=>{
+    alert("Succesfully Registered"),
+    this.signupform.reset();
+    this.router.navigate(['login'])
+  });
 //  console.log(this.signupform.get("Password")?.value)
 
 // console.log(this.signupform.get('Username')?.valueChanges.subscribe(data=>{
@@ -70,8 +76,6 @@ export class SignupComponent implements OnInit {
 } 
 resetform()
 {
-  this.signupform.reset(
-
-  )
+  this.signupform.reset()
 }
 }

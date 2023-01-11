@@ -11,18 +11,20 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
 @NgModule({
-  declarations: [								
+  declarations: [									
     AppComponent,HeaderComponent,
       ProductsComponent,
       LoginComponent,
       SignupComponent,
       FooterComponent,
       HomeComponent,
-      PagenotfoundComponent
+      PagenotfoundComponent,
+      AboutusComponent
    ],
   imports: [
     BrowserModule,

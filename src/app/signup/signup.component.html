@@ -10,20 +10,21 @@
   <pre></pre>
   <label>Enter Your Email</label><br>
   <input type="text" formControlName ="Email">
+  <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('required')&&signupform.get('Email')?.touched">Email is required</div>
+  <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('minlength')&&signupform.get('Email')?.touched">Email should be minimum of 5 characters</div>
+  <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('maxlength')&&signupform.get('Email')?.touched">Email should have a maximum of 10 characters </div>
+
 <br>
 <pre></pre>
 <label>Enter Your Password</label><br>
 <input type="password" formControlName="Password">
-<!-- <div formArrayName="users">
-  <label>Users</label>
-  <div *ngFor="let formctrl of frmarr.controls;let i=index">
-    <input type="text" [formControlName]="i">  
-  </div> -->
-  <!-- <div formArrayName="users">
-  <div *ngFor="let control of getControls(signupform,'users');let i=index" [formGroupName]="i" >
-   <input type="text" [formControlName]="i">
-     --><br>
-<button class="btn btn-primary" type="submit" (click)="registerusers()" [disabled]="!signupform.valid">Submit</button>  
+<div class="text-danger" *ngIf="signupform.get('Password')?.hasError('required')&&signupform.get('Password')?.touched">Password is required </div>
+<div class="text-danger" *ngIf="signupform.get('Password')?.hasError('pattern')&&signupform.get('Password')?.touched">Password is required in requested format e.g Rajmugeshp@8778 </div>
+<div class="text-danger" *ngIf="signupform.get('Password')?.hasError('minlength')&&signupform.get('Password')?.touched">Password should be minimum of 5 characters</div>
+<div class="text-danger" *ngIf="signupform.get('Password')?.hasError('maxlength')&&signupform.get('Password')?.touched">Password should have a maximum of 10 characters </div>
+
+<br>
+<button class="btn btn-primary" type="submit" [disabled]="!signupform.valid">Submit</button>  
 <button class="btn btn-primary" (click)="resetform()">Reset</button><br>
 <a routerLink="/login" >Already Registered?Then Login</a>
     </form>

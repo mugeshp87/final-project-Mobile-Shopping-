@@ -1,7 +1,7 @@
 li{
     display: flex;
-    background-color:rgb(225, 209, 238) ;
-    justify-content: flex-end;
+    background-color:rgb(196, 195, 244) ;
+    justify-content: space-evenly;
     padding: 40px;
     font: weight 300px;;
     
@@ -21,5 +21,8 @@ a{
 }
 a:hover{
     background-color:rgb(23, 178, 126);
-   padding: 20px;
+   padding: 10px;
+}
+li a{
+    font-family:'Courgette',cursive;
 }
