@@ -58,6 +58,21 @@
       "Email": "muge9@gmail.com",
       "Password": "Rajmugeshp@8",
       "id": 7
+    },
+    {
+      "Username": "mugeshp",
+      "Email": "muge9@gmail.com",
+      "Password": "Rajmugeshp@8",
+      "id": 8
+    },
+    {
+      "Username": "mugeshp",
+      "Email": "muge9@gmail.com",
+      "Password": "Rajmugeshp@8",
+      "id": 9
     }
   ]
+  ,
+"products":[]
+
 }

@@ -1,5 +1,5 @@
 <div class="formcontainer">
-<form #loginform="ngForm" style="text-align: center;" (ngSubmit)="Onlogin()">
+<form #loginform="ngForm" style="text-align: center;" (ngSubmit)="Onlogin(loginform)">
   <h1>Login</h1>
   <label for="username">Username</label>
   <input type="text" #name="ngModel" class="form-control"  required  name="username" pattern="[a-z]{4,8}" [(ngModel)]="login.username">

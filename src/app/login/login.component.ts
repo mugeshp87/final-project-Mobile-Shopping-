@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { SignupService } from '../signup/signup.service';
 import { Login } from './login';
 import { HttpClient } from '@angular/common/http';
+import { AuthguardService } from '../authguard.service';
 
 @Component({
   selector: 'app-login',
@@ -16,27 +17,28 @@ submitted=false;
 select='any';
   form: any;
  public loginform!:NgForm
-  constructor(private ser:SignupService,private router:Router,private http:HttpClient) { }
+  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService) { }
 
   ngOnInit() {
   }
 
-  login=new Login("muge","hello")
+  login=new Login("mugeshp","Rajmugeshp@8")
 
 
 
 //   Onsubmit(use:NgForm)
 //   {
-// console.log(use.value)
+// console.log(this.loginform.value)
 // }
 
-Onlogin(){
+Onlogin(use:NgForm){
   this.http.get<any>('http://localhost:3000/users').subscribe(res=>{
     const consumer=res.find((data:any)=>{
-      return data.Username===this.loginform.value.Username&&data.Password===this.loginform.value.Password;})
+      return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){
+      this.auth.logged=true;
       alert("Login Success");
-      this.loginform.reset();
+      use.reset();
       this.router.navigate(['home'])
     }
    else
