@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CrudComponent } from './crud/crud.component';
-
-
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { ViewproductsComponent } from './viewproducts/viewproducts.component';
+import { AdminRoutes } from './admin.routing';
 @NgModule({
   declarations: [
-    CrudComponent
+    AdminhomeComponent,
+    ViewproductsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,AdminRoutes
   ]
 })
 export class AdminModule { }

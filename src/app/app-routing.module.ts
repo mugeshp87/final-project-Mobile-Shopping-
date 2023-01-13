@@ -11,12 +11,14 @@ import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
 {path:'home',component:HomeComponent},
-{path:'products',component:ProductsComponent,canActivate:[AuthGuard]},
+{path:'products',component:ProductsComponent,},
 {path:'login',component:LoginComponent},
 {path:'Signup',component:SignupComponent},
-{path:'aboutus',component:AboutusComponent,canActivate:[AuthGuard]},
+{path:'aboutus',component:AboutusComponent},
+{path:'admin',loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)},
 {path:'',redirectTo:'/home',pathMatch:'full'},
 {path:'**',component:PagenotfoundComponent}
+
 ];
 
 @NgModule({

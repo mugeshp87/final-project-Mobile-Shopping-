@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CrudComponent } from './crud.component';
+import { AdminhomeComponent } from './adminhome.component';
 
-describe('CrudComponent', () => {
-  let component: CrudComponent;
-  let fixture: ComponentFixture<CrudComponent>;
+describe('AdminhomeComponent', () => {
+  let component: AdminhomeComponent;
+  let fixture: ComponentFixture<AdminhomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudComponent ]
+      declarations: [ AdminhomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudComponent);
+    fixture = TestBed.createComponent(AdminhomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

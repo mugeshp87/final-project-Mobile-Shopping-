@@ -12,8 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
-
+import{AdminRoutes} from './admin/admin.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [									
@@ -28,8 +30,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule
-  ],
+    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatSlideToggleModule,MatCardModule],
   providers: [],
   bootstrap: [AppComponent]
 })
