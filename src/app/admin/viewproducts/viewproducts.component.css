@@ -3,3 +3,35 @@
 p{
 font-family:'Black Han Sans';
 }
+tr,td{
+    padding: 20px;
+    margin: 20px;
+    border: 5px outset blueviolet;
+}
+table{
+    border: 2px solid ;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+img{
+    max-width: 150px;
+    max-height: 300px;
+}
+table {
+    width: 100%;
+  }
+button{
+    margin: 10px;
+}
+.btnone{
+    background-color: forestgreen;
+    padding: 10px;
+    width: 100px;
+}
+.btntwo{
+    background-color: rgb(240, 18, 18);
+    padding: 10px;
+    width: 100px;
+    color:white
+}

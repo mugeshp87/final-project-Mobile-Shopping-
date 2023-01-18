@@ -32,7 +32,14 @@ select='any';
 // }
 
 Onlogin(use:NgForm){
-  this.http.get<any>('http://localhost:3000/users').subscribe(res=>{
+  if(use.value.username==="admin"&&use.value.password=="Admin@123")
+  {
+    alert("login success");
+    use.reset();
+    this.router.navigate(['admin/home'])
+  }
+  else
+   this.http.get<any>('http://localhost:3000/users').subscribe(res=>{
     const consumer=res.find((data:any)=>{
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){

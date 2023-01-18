@@ -71,27 +71,28 @@
       "Password": "Rajmugeshp@8",
       "id": 9
     }
+  ],
+  "Mobile": [
+    {
+      "id": 1,
+      "Image": "https://cdn1.smartprix.com/rx-irpAdOz63-w420-h420/iqoo-neo-6-5g.webp",
+      "Name": "Iqoo Neo 6",
+      "Price": "32999",
+      "Variant": "12gb+256gb"
+    },
+    {
+      "id": 2,
+      "Image": "https://cdn1.smartprix.com/rx-ixOebbxll-w420-h420/iqoo-11-16gb-ram-256.webp",
+      "Name": "Iqoo 11",
+      "Price": "64999",
+      "Variant": "16gb+256gb"
+    },
+    {
+      "id": 35,
+      "Name": "Iqoo z6 pro",
+      "Price": 21999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651313679968/58c35d1113be69a9b67c1d94074c403e.png.webp",
+      "Variant": "8gb+128gb"
+    }
   ]
-  ,
-"Mobile":[
-  {
-    "Image":"https://cdn1.smartprix.com/rx-irpAdOz63-w420-h420/iqoo-neo-6-5g.webp",
-    "Name":"Iqoo Neo 6",    
-    "Price":"32999",
-    "Variant":"12gb+256gb"
-  },
-  {
-    "Image":"https://cdn1.smartprix.com/rx-ixOebbxll-w420-h420/iqoo-11-16gb-ram-256.webp",
-    "Name":"Iqoo 11",
-    "Price":"64999",
-    "Variant":"16gb+256gb"
-  },
-  {
-    "Image":"https://cdn1.smartprix.com/rx-im1N8dE6O-w280-h280/iqoo-z6-lite-5g.webp",
-    "Name":"Iqoo z6 lite",
-    "Price":"13999",
-    "Variant":"8gb+128gb"
-  }
-]
-
 }

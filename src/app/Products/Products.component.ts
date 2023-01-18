@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 import { ProductsserviceService } from '../services/productsservice.service';
 @Component({
   selector: 'app-Products',
@@ -6,13 +7,20 @@ import { ProductsserviceService } from '../services/productsservice.service';
   styleUrls: ['./Products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  val:any
-  constructor(private product:ProductsserviceService) { }
+  public val:any;
+  constructor(private product:ProductsserviceService,private cart:CartService) { }
 
   ngOnInit() {
   this.product.getproducts().subscribe(data=>{
     this.val=data;
+
+    this.val.foreach((a:any)=>{Object.assign(a,{quantity:1,total:a.price})})
   })
-  
+
+  }
+  addtocart(item:any)
+  {
+    this.cart.addtocart(item);
+
   }
 }

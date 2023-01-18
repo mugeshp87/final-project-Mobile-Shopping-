@@ -1,3 +1,18 @@
-<p>
-  viewproducts works!
-</p>
+<table>
+  <tr>
+    <td>Mobile Id</td>
+    <td>Mobile Name</td>
+    <td>Mobile Price</td>
+    <td>Mobile Image</td>
+    <td>Mobile Variant</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let product of productvalue">
+    <td>{{product.id}}</td>
+    <td>{{product.Name}}</td>
+    <td>{{product.Price}}</td>
+    <td><img src="{{product.Image}}"></td>
+    <td>{{product.Variant}}</td>
+    <td><button class="btnone" (click)="edit(product.id)">Edit</button><button class="btntwo" (click)="delete(product.id)">Delete</button></td>
+  </tr>
+</table>

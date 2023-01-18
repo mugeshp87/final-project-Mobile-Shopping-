@@ -2,16 +2,16 @@
 
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ProductsserviceService } from './productsservice.service';
+import { AdminserviceService } from './adminservice.service';
 
-describe('Service: Productsservice', () => {
+describe('Service: Adminservice', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ProductsserviceService,HttpClient,HttpHandler]
+      providers: [AdminserviceService,HttpClient,HttpHandler]
     });
   });
 
-  it('should ...', inject([ProductsserviceService], (service: ProductsserviceService) => {
+  it('should ...', inject([AdminserviceService], (service: AdminserviceService) => {
     expect(service).toBeTruthy();
   }));
 });

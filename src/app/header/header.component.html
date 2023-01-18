@@ -4,10 +4,12 @@
     <img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" >
     <ul><a routerLink="products">Products</a></ul>
     <ul><a routerLink="aboutus">About Us</a></ul>
-    <ul><a>Add To Cart</a></ul>
     <ul><a routerLink="login">Login</a></ul>
     <ul><a routerLink="Signup">Signup</a></ul>
-    <ul><a routerLink="admin">Admin</a></ul>
+    <ul><button routerLink="cart" class="btn">
+      <i style="font-size:25px" class="fas fa-cart-plus"></i>
+    <div style="font-size:8px" class="badge bg-danger">{{totalitem}}</div>
+    </button></ul>
   </li>
 </nav>
 <router-outlet></router-outlet>

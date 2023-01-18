@@ -25,3 +25,8 @@ a:hover{
 li a{
     font-family:'Courgette',cursive;
 }
+.fas{
+    position: absolute;
+    top: 40px;
+
+}

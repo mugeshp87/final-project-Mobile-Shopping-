@@ -1,0 +1,17 @@
+<div class="formcontainer">
+<form #addproductform="ngForm" (ngSubmit)="addproducts(addproductform)"> 
+  <h1>Add Products</h1>
+  <label>Product Id</label><br>
+<input type="number" placeholder="enter your product id" ngModel name="id"><br>
+<label>Product Name</label><br>
+<input type="text" placeholder="enter your product name " ngModel  name="Name"><br>
+<label>Product Price</label><br>
+<input type="number" placeholder="enter your product price" ngModel  name="Price"><br>
+<label>Product Image</label><br>
+<input type="text" name="Image" placeholder="enter your img url" ngModel><br>
+<label>Product Variant</label><br>
+<input type="text" placeholder="enter your product variant"  name="Variant" ngModel>
+<br>
+<button class="button">Submit</button>
+</form>
+</div>

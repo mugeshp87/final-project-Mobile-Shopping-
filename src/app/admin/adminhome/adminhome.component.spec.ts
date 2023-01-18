@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminhomeComponent } from './adminhome.component';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('AdminhomeComponent', () => {
   let component: AdminhomeComponent;
@@ -11,7 +12,7 @@ describe('AdminhomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminhomeComponent ]
+      declarations: [ AdminhomeComponent ],providers:[HttpClient,HttpHandler]
     })
     .compileComponents();
   }));

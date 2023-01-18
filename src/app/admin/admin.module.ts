@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { ViewproductsComponent } from './viewproducts/viewproducts.component';
 import { AdminRoutes } from './admin.routing';
+import { FormsModule } from '@angular/forms';
+import { UpdateproductsComponent } from './updateproducts/updateproducts.component';
+import { AddproductsComponent } from './addproducts/addproducts.component';
+
 @NgModule({
   declarations: [
     AdminhomeComponent,
-    ViewproductsComponent
+    ViewproductsComponent,UpdateproductsComponent,AddproductsComponent
   ],
   imports: [
-    CommonModule,AdminRoutes
-  ]
+    CommonModule,FormsModule,AdminRoutes]
 })
 export class AdminModule { }

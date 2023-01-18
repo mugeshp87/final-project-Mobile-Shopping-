@@ -16,9 +16,10 @@ import{AdminRoutes} from './admin/admin.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [									
+  declarations: [										
     AppComponent,HeaderComponent,
       ProductsComponent,
       LoginComponent,
@@ -26,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
       FooterComponent,
       HomeComponent,
       PagenotfoundComponent,
-      AboutusComponent
+      AboutusComponent,
+      CartComponent
    ],
   imports: [
     BrowserModule,
