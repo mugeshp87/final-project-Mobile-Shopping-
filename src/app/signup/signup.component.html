@@ -1,5 +1,5 @@
 <div class="formdiv">
-  <form [formGroup]="signupform" (ngSubmit)="registerusers()">
+  <form [formGroup]="signupform">
   <h1>Signup Form</h1>
   <label>Enter Your Username</label><br>
   <input type="text" formControlName="Username">
@@ -11,6 +11,7 @@
   <label>Enter Your Email</label><br>
   <input type="text" formControlName ="Email">
   <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('required')&&signupform.get('Email')?.touched">Email is required</div>
+  <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('pattern')&&signupform.get('Email')?.touched"> Email is required in requested format e.g Rajmugeshp@gmail.com </div>
   <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('minlength')&&signupform.get('Email')?.touched">Email should be minimum of 5 characters</div>
   <div class="text-danger" *ngIf="signupform.get('Email')?.hasError('maxlength')&&signupform.get('Email')?.touched">Email should have a maximum of 10 characters </div>
 
@@ -24,7 +25,7 @@
 <div class="text-danger" *ngIf="signupform.get('Password')?.hasError('maxlength')&&signupform.get('Password')?.touched">Password should have a maximum of 10 characters </div>
 
 <br>
-<button class="btn btn-primary" type="submit" [disabled]="!signupform.valid">Submit</button>  
+<button class="btn btn-primary"  (click)="registerusers()" type="submit" [disabled]="!signupform.valid">Submit</button>  
 <button class="btn btn-primary" (click)="resetform()">Reset</button><br>
 <a routerLink="/login" >Already Registered?Then Login</a>
     </form>

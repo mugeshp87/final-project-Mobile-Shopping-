@@ -21,9 +21,10 @@ addtocart(product:any)
 getTotalPrice():number
 {
   let alltotal=0;
-  this.cartItemList.map((a:any)=>{alltotal+=a.total})
+  this.cartItemList.map((a:any)=>{alltotal=alltotal+a.total})
   return alltotal;
 }
+
 removeitemcart(product:any)
 {
 this.cartItemList.map((a:any,index:any)=>{

@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductsComponent } from './Products/Products.component';
 import { SignupComponent } from './signup/signup.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
 {path:'home',component:HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path:'Signup',component:SignupComponent},
 {path:'aboutus',component:AboutusComponent},
 {path:'cart',component:CartComponent},
+{path:'success',component:SuccessComponent},
 {path:'admin',loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)},
 {path:'',redirectTo:'/home',pathMatch:'full'},
 {path:'**',component:PagenotfoundComponent}

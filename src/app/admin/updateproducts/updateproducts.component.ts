@@ -18,6 +18,13 @@ export class UpdateproductsComponent implements OnInit,OnChanges{
 ngOnChange():void {
 this.newdata();  
 }
+updateproduct(form:NgForm)
+{
+console.log(form.value)
+const data=form.value.id;
+this.ser.updateadminproducts(data,form.value).subscribe();
+}
+
 newdata()
 {
 this.ser.getadminproducts().subscribe(res=>{this.product=res})

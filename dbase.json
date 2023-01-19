@@ -70,6 +70,54 @@
       "Email": "muge9@gmail.com",
       "Password": "Rajmugeshp@8",
       "id": 9
+    },
+    {
+      "Username": "mugeshp",
+      "Email": "muge9@gmail.com",
+      "Password": "Rajmugeshp@8",
+      "id": 10
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 11
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 12
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 13
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 14
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 15
+    },
+    {
+      "Username": null,
+      "Email": null,
+      "Password": null,
+      "id": 16
+    },
+    {
+      "Username": "mugeshp",
+      "Email": "muge9@gmail.com",
+      "Password": "Rajmugeshp@8",
+      "id": 17
     }
   ],
   "Mobile": [
@@ -93,6 +141,13 @@
       "Price": 21999,
       "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651313679968/58c35d1113be69a9b67c1d94074c403e.png.webp",
       "Variant": "8gb+128gb"
+    },
+    {
+      "id": 3,
+      "Name": "IQOO Z6 Lite 5G",
+      "Price": 15499,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1663130037508/b0aa236373a91ad4780710673a6beb18.png.webp",
+      "Variant": "6GB+128GB "
     }
   ]
 }

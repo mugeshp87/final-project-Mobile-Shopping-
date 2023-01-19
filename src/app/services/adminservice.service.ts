@@ -20,6 +20,11 @@ deleteadminproducts(data:any)
 }
 updateadminproducts(data:any,newdata:any)
 {
-  return this.http.put(`${this.url}/${data}`,newdata)
-} 
+  console.log(data)
+  console.log(newdata)
+  return this.http.put(`${this.url}/${data}`,newdata) 
+}
+editproduct(id:any){
+  return this.http.get(`${this.url}/${id}`)
+}
 } 

@@ -1,6 +1,6 @@
 .footer{
     background-color: #242329;
-    height: 550px;
+    height: 320px;
     color: white;
 }
 h1{
@@ -10,6 +10,7 @@ h1{
 hr{
     color: white;
     font-weight: 800;
+    background-color: aliceblue;
     
 }
 i{
@@ -19,26 +20,36 @@ a{
     text-decoration: none;
     color: white;
 }
-.footersmalltext{
-    text-align: center;
-}
+
 li{
     list-style-type: none;
     
 }
 .brandlogos{
-text-align: center;
+    margin-right:300px
+
 }
 .brandlogos > i{
     padding: 10px;
 }
-
-.footer-center{
-    text-align: center;
-    bottom: 30px;
-
-}
 .brandlogos > i:hover{
     background-color: lightcoral;
     padding:max-content;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+.footersmalltext{
+   position: absolute;
+   left: 780px;
+   margin-top: 260px;
+}
+.second-row{
+    margin-left: 480px;
+}
+hr{
+    background-color: aliceblue;
 }

@@ -20,8 +20,7 @@ ngOnChanges(): void {
     this.service.getadminproducts().subscribe(value=>{this.productvalue=value})
   }
   edit(data:any){
-    return this.popup=true;
-    this.id=data;
+  
   }
 
   delete(data:any)
@@ -31,4 +30,6 @@ ngOnChanges(): void {
     this.ngOnChanges()
     alert("Product Deleted Successfully")
   }
+
+
 }

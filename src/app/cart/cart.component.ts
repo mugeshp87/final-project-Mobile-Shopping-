@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
 public product:any=[];
 public grandtotal:number=0;
-  constructor(private cart:CartService) {
+  constructor(private cart:CartService,private route:Router) {
    }
 
   ngOnInit() {
@@ -17,6 +18,7 @@ public grandtotal:number=0;
       this.product=res;
       this.grandtotal=this.cart.getTotalPrice();
     })
+   
   }
   removeitemcart(item:any){
     this.cart.removeitemcart(item)
@@ -25,5 +27,13 @@ public grandtotal:number=0;
   {
     this.cart.removeallcart();
   }
+ success()
+ {
+  this.route.navigate(["success"]);
+  setTimeout(() => {
+    this.route.navigate(["home"]) 
 
+  }, 3000);
+ 
+}
 }

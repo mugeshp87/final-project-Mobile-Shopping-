@@ -17,9 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SuccessComponent } from './success/success.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [										
+  declarations: [											
     AppComponent,HeaderComponent,
       ProductsComponent,
       LoginComponent,
@@ -28,11 +31,12 @@ import { CartComponent } from './cart/cart.component';
       HomeComponent,
       PagenotfoundComponent,
       AboutusComponent,
-      CartComponent
+      CartComponent,
+      SuccessComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatSlideToggleModule,MatCardModule],
+    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatSlideToggleModule,MatCardModule,MatProgressSpinnerModule,ToastrModule],
   providers: [],
   bootstrap: [AppComponent]
 })
