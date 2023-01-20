@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-adminhome',
@@ -8,13 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AdminhomeComponent implements OnInit {
 
-  constructor(public route:Router) { }
+  constructor(public route:Router,private toastr:ToastrService) { }
 
   ngOnInit() {
   }
 logout()
 {
-  alert("Logged Out Successfully");
-  this.route.navigate(["/home"])
+  this.toastr.success("Logged Out Successfully");
+  this.route.navigate(["/home"]);
 }
 }

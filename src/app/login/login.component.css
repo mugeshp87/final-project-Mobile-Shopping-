@@ -2,14 +2,22 @@ label,input{
     margin:5px;
 
 }
+label{
+    font-weight: bolder;
+    font-size: 30px;
+}
 .formcontainer{
-    background-color: rgb(18, 139, 245,0.3);
+    background-color: rgb(18, 139, 245,0.1);
     height: 500px;
     width: 500px;
     box-shadow: 0 5px 10px #b81515,0 5px 20px rgb(0, 191, 255);
     padding: 30px;
-    margin: 100px;
-    margin-left: 600px;
+    margin-left: 300px;    
+}
+.formcontainer{
+    position: absolute;
+    left: 0;
+    top:300px;
 }
 .btn{
 background-color: rgb(0, 95, 13),;
@@ -17,7 +25,7 @@ width:200px;
 padding: 10px;
 } 
 form{
-margin-top: 30px;
+margin-top: 50px;
 }
 
 .ng-invalid:not(form){
@@ -32,4 +40,16 @@ a{
 }
 h1{
     font-family:'Courgette',cursive;
+    font-weight: bolder;
+    font-size: 60px;
 } 
+.body{
+    background-image: url(../../assets/v-a-tao-VmPvwdZ5C9M-unsplash.jpg);
+    background-size: cover;
+    height: 900px;
+    width: 1900px;
+    background-repeat: no-repeat;
+}
+.formcontainer:hover{
+    background-color: rgb(117, 183, 241,0.5);
+}

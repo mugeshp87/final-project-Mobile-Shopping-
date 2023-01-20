@@ -1,19 +1,27 @@
+  @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
 .formdiv{
-    margin: 100px;
-    background-color:rgba(96, 151, 171, 0.454);
+    background-color:lightblue;
     height:550px;
     width:550px;
     box-shadow: 0 5px 10px #046875,0 5px 20px rgb(238, 174, 111);
     padding: 30px;
-    margin: 100px;
     margin-left: 600px;
+}
+.formdiv{
+    position:absolute;
+    top:230px;
+    left: 140px;
+
 }
 form{
     padding-top: 38px;
     padding-left: 50px;
 }
 h1{
-    margin-left: 70px;
+    margin-left: 120px;
+    font-family: 'Leckerli One', cursive;
+    font-weight: bold;
+    font-size: xx-large;
 }
 label,input{
     padding:10px;
@@ -29,10 +37,20 @@ margin: 10px;
 .ng-invalid:not(form){
     background-color: #b81515;
 }
-.ng-valid{
+.ng-valid:not(form){
     border:2px solid lightgreen;
 }
 a{
     text-decoration: none;
     color: black;
+}
+.body{
+    background-image: url(../../assets/hugo-agut-tugal-6cdIdu8KkLg-unsplash.jpg);
+    background-size: cover;
+    height: 700px;
+    width: 1900px;
+    background-repeat: no-repeat;
+}
+.formcontainer:hover{
+    background-color: rgb(117, 183, 241,0.8);
 }

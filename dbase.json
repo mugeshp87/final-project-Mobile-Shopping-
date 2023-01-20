@@ -64,89 +64,140 @@
       "Email": "muge9@gmail.com",
       "Password": "Rajmugeshp@8",
       "id": 8
-    },
-    {
-      "Username": "mugeshp",
-      "Email": "muge9@gmail.com",
-      "Password": "Rajmugeshp@8",
-      "id": 9
-    },
-    {
-      "Username": "mugeshp",
-      "Email": "muge9@gmail.com",
-      "Password": "Rajmugeshp@8",
-      "id": 10
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 11
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 12
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 13
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 14
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 15
-    },
-    {
-      "Username": null,
-      "Email": null,
-      "Password": null,
-      "id": 16
-    },
-    {
-      "Username": "mugeshp",
-      "Email": "muge9@gmail.com",
-      "Password": "Rajmugeshp@8",
-      "id": 17
     }
   ],
   "Mobile": [
     {
       "id": 1,
-      "Image": "https://cdn1.smartprix.com/rx-irpAdOz63-w420-h420/iqoo-neo-6-5g.webp",
-      "Name": "Iqoo Neo 6",
-      "Price": "32999",
-      "Variant": "12gb+256gb"
-    },
-    {
-      "id": 2,
-      "Image": "https://cdn1.smartprix.com/rx-ixOebbxll-w420-h420/iqoo-11-16gb-ram-256.webp",
-      "Name": "Iqoo 11",
-      "Price": "64999",
-      "Variant": "16gb+256gb"
-    },
-    {
-      "id": 35,
-      "Name": "Iqoo z6 pro",
-      "Price": 21999,
-      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651313679968/58c35d1113be69a9b67c1d94074c403e.png.webp",
-      "Variant": "8gb+128gb"
+      "Name": "IQOO 11 (5G)  Legend",
+      "Price": 59999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1673263735488/7a1a2eed480623e72636a02c9e7ea65f.png.webp",
+      "Variant": "8GB+256GB"
     },
     {
       "id": 3,
-      "Name": "IQOO Z6 Lite 5G",
+      "Name": "IQOO 9T Legend 12GB+256GB (5G)",
+      "Price": 54999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1659344524654/17245aed26be1b158b2457d0ebf7e88f.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 4,
+      "Name": "IQOO 9T Alpha (5G)",
+      "Price": 54999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1659344519397/46f7631ca799ef2df26c4c4fe76e0493.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 5,
+      "Name": "IQOO Neo 6 Cyber Rage  (5G)",
+      "Price": 31999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1653970418990/7624cb2bc7e81708af7e36f3d4c82606.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 6,
+      "Name": "IQOO Neo 6 Maverick Orange  (5G)",
+      "Price": 31999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1658473877166/eaf10e27e536b9c9585db7dae7a18e2a.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 7,
+      "Name": "IQOO Neo 6 Dark Nova (5G)",
+      "Price": 31999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1653970386868/4fb9e447f0e1a376bdc6531437d48a89.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 9,
+      "Name": "IQOO Neo 6 Maverick Orange (5G)",
+      "Price": 31999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1658473877166/eaf10e27e536b9c9585db7dae7a18e2a.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 10,
+      "Name": "IQOO Neo 6 Cyber Rage (5G)",
+      "Price": 27999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1653970280214/eff7de78735f30163e4ba1415d7e519f.png.webp",
+      "Variant": "8GB+128GB"
+    },
+    {
+      "id": 11,
+      "Name": "IQOO Neo 6 Dark Nova (5G)",
+      "Price": 27999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1653914126378/48c5c492dafcca94e50c78efa6e0d513.png.webp",
+      "Variant": "8GB+128GB"
+    },
+    {
+      "id": 12,
+      "Name": "IQOO Z6 Pro Legion Sky  (5G)",
+      "Price": 25999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1662352778134/8c49fb9ff4706f9412d2f2216a1afbfd.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 13,
+      "Name": "IQOO Z6 Pro Phantom Dusk  (5G)",
+      "Price": 25999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651313640429/434de42c567be94e71f6835cae9ad29d.png.webp",
+      "Variant": "12GB+256GB"
+    },
+    {
+      "id": 14,
+      "Name": "IQOO Z6 Pro Legion Sky (5G)",
+      "Price": 21999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651313679968/58c35d1113be69a9b67c1d94074c403e.png.webp",
+      "Variant": "8GB+128GB"
+    },
+    {
+      "id": 15,
+      "Name": "IQOO Z6 Pro Phantom Dusk (5G)",
+      "Price": 21999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1651303813775/797d5d0b79d67cecc13b740e3228e146.png.webp",
+      "Variant": "8GB+128GB"
+    },
+    {
+      "id": 16,
+      "Name": "IQOO Z6 Lite 5G Stellar Green (5G)",
       "Price": 15499,
       "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1663130037508/b0aa236373a91ad4780710673a6beb18.png.webp",
+      "Variant": "4GB+64GB"
+    },
+    {
+      "id": 17,
+      "Name": "IQOO Z6 Lite 5G Mystic Night (5G)",
+      "Price": 15499,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1663047784686/634bc87f80dabb517d3c3c79b6fecee4.png.webp",
+      "Variant": "4GB+64GB"
+    },
+    {
+      "id": 18,
+      "Name": "iQOO Z6 Lite 5G Stellar Green  (5G)",
+      "Price": 15499,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1663130037508/b0aa236373a91ad4780710673a6beb18.png.webp",
+      "Variant": "6GB+128GB "
+    },
+    {
+      "id": 19,
+      "Name": "iQOO Z6 Lite Mystic Night (5G)",
+      "Price": 15499,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/in/1663047784686/634bc87f80dabb517d3c3c79b6fecee4.png.webp",
+      "Variant": "6GB+128GB "
+    },
+    {
+      "id": 20,
+      "Name": "IQOO Z6 Chromatic Blue ",
+      "Price": 17999,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1647925540103/b7ac339d4dedf0d341d3a23b3626ba14.png.webp",
+      "Variant": "8GB+128GB"
+    },
+    {
+      "id": 21,
+      "Name": "iQOO Z6 Dynamo Black 6GB+128GB",
+      "Price": 16499,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1647925569876/def732ab15586562bfa1db57e478dae4.png.webp",
       "Variant": "6GB+128GB "
     }
   ]

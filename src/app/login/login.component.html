@@ -1,29 +1,18 @@
+<div class="body">
 <div class="formcontainer">
 <form #loginform="ngForm" style="text-align: center;" (ngSubmit)="Onlogin(loginform)">
-  <h1>Login</h1>
+  <h1>Login</h1><br><br>
   <label for="username">Username</label>
   <input type="text" #name="ngModel" class="form-control"  required  name="username" pattern="[a-z]{4,8}" [(ngModel)]="login.username">
   <pre></pre>
   <label for="password">Password</label>
   <input type="password"  class="form-control"  required name="password" [(ngModel)]="login.password" > 
-  
   <pre></pre>
-  <!-- <select [(ngModel)]="select" name="select" required >
-    <option value="1">Admin
-    </option>
-    <option value="2">
-      User
-    </option>
-  </select>
-  <pre></pre> -->
-<!-- <input type="submit" class="btn btn-primary" > -->
 <button type="submit" class="btn btn-primary"  [disabled]="!loginform.valid" >Login</button>
-<!-- <input type="reset" class="btn btn-secondary"> -->
-<!-- <button class="btn btn primary" (click)="setvalues(loginform)">Setvalues</button> -->
 </form>
 <pre></pre>
 <a routerLink="/Signup">New User?Signup Here</a>
 </div>
-{{login|json}}
-{{loginform.value|json}}
-
+<!-- {{login|json}}
+{{loginform.value|json}} -->
+</div>

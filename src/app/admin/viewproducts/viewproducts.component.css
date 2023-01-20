@@ -40,3 +40,25 @@ button{
     width: 100px;
     color:white
 }
+.body{
+    animation:changebg 30s infinite alternate linear
+}
+  @keyframes changebg{
+    0%{
+      background: rgb(118, 175, 232);
+    }
+    25%{
+      background: #c6574f;
+    }
+    50%{
+      background: #48d976;
+    }
+    75%
+    {
+      background: #ffd97d;
+    }
+    100%
+    {
+      background:whitesmoke;
+    }
+  }

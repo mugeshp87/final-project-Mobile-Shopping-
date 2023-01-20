@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AdminserviceService } from 'src/app/services/adminservice.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AdminserviceService } from 'src/app/services/adminservice.service';
 export class AddproductsComponent implements OnInit {
   value:any;
 
-  constructor(private ser:AdminserviceService) { }
+  constructor(private ser:AdminserviceService,private toastr:ToastrService) { }
 
   ngOnInit() {
     
@@ -18,6 +19,6 @@ export class AddproductsComponent implements OnInit {
 addproducts(addproductform:NgForm)
 {
 this.ser.addadminproducts(addproductform.value).subscribe(data=>{this.value=data})
-console.log(addproductform.value)
+this.toastr.success("Product Added Successfully","",{"positionClass":"toast-top-center"})
 }
 }

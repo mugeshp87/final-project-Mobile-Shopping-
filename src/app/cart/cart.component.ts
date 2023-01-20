@@ -32,6 +32,7 @@ public grandtotal:number=0;
   this.route.navigate(["success"]);
   setTimeout(() => {
     this.route.navigate(["home"]) 
+    this.cart.removeallcart();
 
   }, 3000);
  

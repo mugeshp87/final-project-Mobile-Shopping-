@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { ToastContainerModule, ToastrService } from 'ngx-toastr';
 import { SignupService } from './signup.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class SignupComponent implements OnInit {
   signupform!: FormGroup;
 users: any;
   
-  constructor(private fb:FormBuilder,private signservice:SignupService,private router:Router) { }
+  constructor(private fb:FormBuilder,private signservice:SignupService,private router:Router,private toastr:ToastrService) { }
 
   ngOnInit() {
   //   this.signupform=new FormGroup({
@@ -63,7 +64,7 @@ users: any;
 // }
   registerusers(){
   this.signservice.addusers(this.signupform.value).subscribe(res=>{
-    alert("Succesfully Registered"),
+    this.toastr.success("Succesfully Registered"),
     this.signupform.reset();
     this.router.navigate(['login'])
   });

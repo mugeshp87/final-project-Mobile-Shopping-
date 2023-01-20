@@ -8,12 +8,8 @@
   .hrlo{
     display: flex;
     flex-wrap: wrap;
-    padding: px;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color:white;
-
-    
   }
   button{
     background-color: rgb(204, 33, 127);
@@ -43,4 +39,7 @@
 }
 .Mvariant{
   color:lightslategrey ;
+}
+button:hover{
+  background-color: blue;
 }

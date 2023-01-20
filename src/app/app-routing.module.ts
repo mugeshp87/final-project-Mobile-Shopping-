@@ -13,13 +13,13 @@ import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
 {path:'home',component:HomeComponent},
-{path:'products',component:ProductsComponent,},
+{path:'products',component:ProductsComponent,canActivate:[AuthGuard]},
 {path:'login',component:LoginComponent},
 {path:'Signup',component:SignupComponent},
-{path:'aboutus',component:AboutusComponent},
-{path:'cart',component:CartComponent},
-{path:'success',component:SuccessComponent},
-{path:'admin',loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)},
+{path:'aboutus',component:AboutusComponent,canActivate:[AuthGuard]},
+{path:'cart',component:CartComponent,canActivate:[AuthGuard]},
+{path:'success',component:SuccessComponent,canActivate:[AuthGuard]},
+{path:'admin',loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule),canActivate:[AuthGuard]},
 {path:'',redirectTo:'/home',pathMatch:'full'},
 {path:'**',component:PagenotfoundComponent}
 

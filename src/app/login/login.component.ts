@@ -6,6 +6,7 @@ import { SignupService } from '../signup/signup.service';
 import { Login } from './login';
 import { HttpClient } from '@angular/common/http';
 import { AuthguardService } from '../authguard.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ submitted=false;
 select='any';
   form: any;
  public loginform!:NgForm
-  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService) { }
+  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService,private toastr:ToastrService) { }
 
   ngOnInit() {
   }
@@ -34,7 +35,9 @@ select='any';
 Onlogin(use:NgForm){
   if(use.value.username==="admin"&&use.value.password=="Admin@123")
   {
-    alert("login success");
+    this.auth.logged=true;
+    this.toastr.success("Login Success")
+    sessionStorage.setItem("username","admin")
     use.reset();
     this.router.navigate(['admin/home'])
   }
@@ -44,18 +47,18 @@ Onlogin(use:NgForm){
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){
       this.auth.logged=true;
-      alert("Login Success");
+      sessionStorage.setItem('Username',use.value.username)
+      this.toastr.success("Login Success","",{'positionClass':'toast-top-right'})
       use.reset();
       this.router.navigate(['home'])
     }
    else
    {
-      alert("user not found")
-   }
+      this.toastr.error("user not found")
+    }
   })
 
 }
-
 
 }
 // resetform(rform:NgForm)
