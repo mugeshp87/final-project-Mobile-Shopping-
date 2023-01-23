@@ -1,18 +1,20 @@
 li{
     display: flex;
     background-color:rgb(196, 195, 244) ;
-    justify-content: space-evenly;
-    padding: 40px;
+   justify-content: space-evenly;
+    padding: 20px;
     font: weight 300px;
+}
+li>ul{
+padding-top: 20px;
 }
 .logo{
 position: absolute;
-left: 0px;
+left: 10px;
 top: 0;;
 width: 120px;
 height: 120px;
 }
-
 
 a{
     text-decoration: none;
@@ -20,7 +22,7 @@ a{
 }
 a:hover{
     background-color:rgb(23, 178, 126);
-   padding: 10px;
+   padding: 5px;
 }
 li a{
     font-family:'Courgette',cursive;
@@ -28,5 +30,4 @@ li a{
 .fas{
     position: absolute;
     top: 40px;
-
 }

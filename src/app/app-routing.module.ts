@@ -12,17 +12,16 @@ import { SignupComponent } from './signup/signup.component';
 import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
-{path:'home',component:HomeComponent},
-{path:'products',component:ProductsComponent,canActivate:[AuthGuard]},
-{path:'login',component:LoginComponent},
-{path:'Signup',component:SignupComponent},
-{path:'aboutus',component:AboutusComponent,canActivate:[AuthGuard]},
-{path:'cart',component:CartComponent,canActivate:[AuthGuard]},
-{path:'success',component:SuccessComponent,canActivate:[AuthGuard]},
-{path:'admin',loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule),canActivate:[AuthGuard]},
+{path:'home',title:"Home",component:HomeComponent},
+{path:'products',title:"Products",component:ProductsComponent,canActivate:[AuthGuard]},
+{path:'login',title:"Login",component:LoginComponent},
+{path:'Signup',title:"Signup",component:SignupComponent},
+{path:'aboutus',title:"AboutUs",component:AboutusComponent,canActivate:[AuthGuard]},
+{path:'cart',title:"Cart",component:CartComponent,canActivate:[AuthGuard]},
+{path:'success',title:"Success",component:SuccessComponent,canActivate:[AuthGuard]},
+{path:'admin',title:"Admin",loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)},
 {path:'',redirectTo:'/home',pathMatch:'full'},
 {path:'**',component:PagenotfoundComponent}
-
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Inika:regular,700);
 @import url(https://fonts.googleapis.com/css?family=Black+Han+Sans:regular);
-p{
+/* p{
 font-family:'Black Han Sans';
 }
 tr,td{
@@ -61,4 +61,28 @@ button{
     {
       background:whitesmoke;
     }
+  } */
+  .example-spacer {
+    flex: 1 1 auto;
   }
+  table {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  img{
+  width: 150px;
+  }
+td,th{
+  padding: 20px;
+}
+/* .contain{
+  max-width: 1200px;
+  margin: 0 auto ;
+} */
+
+ 

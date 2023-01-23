@@ -96,13 +96,6 @@
       "Variant": "12GB+256GB"
     },
     {
-      "id": 6,
-      "Name": "IQOO Neo 6 Maverick Orange  (5G)",
-      "Price": 31999,
-      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1658473877166/eaf10e27e536b9c9585db7dae7a18e2a.png.webp",
-      "Variant": "12GB+256GB"
-    },
-    {
       "id": 7,
       "Name": "IQOO Neo 6 Dark Nova (5G)",
       "Price": 31999,
@@ -199,6 +192,13 @@
       "Price": 16499,
       "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1647925569876/def732ab15586562bfa1db57e478dae4.png.webp",
       "Variant": "6GB+128GB "
+    },
+    {
+      "id": 23,
+      "Name": "iQOO 9 Pro Dark Cruise (5G)",
+      "Price": 59990,
+      "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1645603796716/313ea2cfd9f3f9d6f9249d4cc3e3d245.png.webp",
+      "Variant": "8GB+256GB"
     }
   ]
 }

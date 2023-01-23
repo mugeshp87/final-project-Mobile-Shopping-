@@ -18,7 +18,7 @@ submitted=false;
 select='any';
   form: any;
  public loginform!:NgForm
-  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService,private toastr:ToastrService) { }
+  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService,private toastr:ToastrService,) { }
 
   ngOnInit() {
   }
@@ -36,8 +36,8 @@ Onlogin(use:NgForm){
   if(use.value.username==="admin"&&use.value.password=="Admin@123")
   {
     this.auth.logged=true;
-    this.toastr.success("Login Success")
-    sessionStorage.setItem("username","admin")
+    this.toastr.success("Login Success",use.value.username)
+    localStorage.setItem("LoggedInAdmin","admin")
     use.reset();
     this.router.navigate(['admin/home'])
   }
@@ -47,7 +47,7 @@ Onlogin(use:NgForm){
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){
       this.auth.logged=true;
-      sessionStorage.setItem('Username',use.value.username)
+      localStorage.setItem('LoggedInUser',use.value.username)
       this.toastr.success("Login Success","",{'positionClass':'toast-top-right'})
       use.reset();
       this.router.navigate(['home'])

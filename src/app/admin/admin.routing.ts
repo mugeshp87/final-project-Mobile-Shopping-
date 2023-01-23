@@ -4,12 +4,15 @@ import { AddproductsComponent } from './addproducts/addproducts.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { UpdateproductsComponent } from './updateproducts/updateproducts.component';
 import { ViewproductsComponent } from './viewproducts/viewproducts.component';
+import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 const routes: Routes = [
-  {path:'home',component:AdminhomeComponent,
+  {path:'home',title:"Admin",component:AdminhomeComponent,
   children:[
-    {path:'view',component:ViewproductsComponent,canActivate:[AuthGuard]},
-    {path:'update',component:UpdateproductsComponent,canActivate:[AuthGuard]},
-    {path:'add',component:AddproductsComponent,canActivate:[AuthGuard]}
+    {path:'view',title:'View',component:ViewproductsComponent},
+    {path:'update',title:'Update',component:UpdateproductsComponent}, 
+    {path:'add',title:'Add',component:AddproductsComponent},
+    {path:'',redirectTo:'admin/home',pathMatch:'full'},
+{path:'**',component:PagenotfoundComponent}
   ]
 },
   

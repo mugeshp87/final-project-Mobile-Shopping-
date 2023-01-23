@@ -1,16 +1,40 @@
 <nav>
-  
   <li>
-    <img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" >
+    <ul><a routerLink="home"><img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></ul>   
+    <ul><a routerLink="home">Home</a></ul>
     <ul><a routerLink="products">Products</a></ul>
-    <ul><a routerLink="aboutus">About Us</a></ul>
-    <ul><a routerLink="login">Login</a></ul>
+    <ul  *ngIf="hideuserurl"><a routerLink="login">Login</a></ul>
+    <ul  *ngIf="hideuserurl" ><a routerLink="Signup" >Signup</a></ul>
+    <ul><button routerLink="cart" class="btn">
+      <i style="font-size:25px" class="fas fa-cart-plus"></i>
+    <div style="font-size:8px" class="badge bg-danger">{{totalitem}}</div>
+    </button></ul>
+    <ul><a style="cursor:pointer" (click)="logout()"  *ngIf="!hideuserurl">Logout</a></ul>
+  </li>
+
+  <!-- <li>  
+    <ul><a routerLink="home">Home</a></ul>
+    <ul><a routerLink="products">44</a></ul>
+    <ul><a routerLink="aboutus">33</a></ul>
+    <ul><a routerLink="login" >Login</a></ul>
     <ul><a routerLink="Signup">Signup</a></ul>
     <ul><button routerLink="cart" class="btn">
       <i style="font-size:25px" class="fas fa-cart-plus"></i>
     <div style="font-size:8px" class="badge bg-danger">{{totalitem}}</div>
     </button></ul>
-  </li>
+  </li> -->
+
+
+
+  <!-- <li *ngIf="navbar==='admin'" >
+    <img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" >
+    <ul><a routerLink="home">Home</a></ul>
+    <ul><a routerLink="admin/home">View</a></ul>
+    <ul><a routerLink="admin/view">Add</a></ul>
+    <ul><a routerLink="admin/update" >Update</a></ul>
+    <ul><a routerLink="admin/view">Delete</a></ul>
+    <ul><a (click)="logout()">Logout</a></ul>
+  </li> -->
 </nav>
 <router-outlet></router-outlet>
 
