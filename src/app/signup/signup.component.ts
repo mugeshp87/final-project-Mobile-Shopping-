@@ -16,27 +16,12 @@ users: any;
   constructor(private fb:FormBuilder,private signservice:SignupService,private router:Router,private toastr:ToastrService) { }
 
   ngOnInit() {
-  //   this.signupform=new FormGroup({
-  //     'Username':new FormControl(),
-  //     'Email':new FormControl(),'Password':new FormControl()})
-  // } 
-  // let users=new FormArray([new FormControl('name'),
-  // new FormControl('lastname')])
-  // console.log(users)
-  // console.log(users.value)
-
 
   this.signupform=this.fb.group({
-  'Username':new FormControl('mugeshp',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),   
+  'Username':new FormControl('mugeshp',[Validators.required,Validators.minLength(4),Validators.maxLength(8),Validators.pattern("[a-z]{4,8}")]),   
    'Email':new FormControl('muge9@gmail.com',[Validators.required,Validators.minLength(5),Validators.maxLength(15),Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
    'Password':new FormControl('Rajmugeshp@8',[Validators.required,Validators.maxLength(12),Validators.minLength(5),Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")]),
-  //  'users':new FormArray([new FormControl(''),
-  //  new FormControl('')
-  //  ])
-  // 'users':this.fb.group({
-  //   'name':new FormControl('mugesh'),
-  //   'age':new FormControl('14')
-  // })
+
 
 })
 // this.signupform.controls['users'].patchValue(["team"]);

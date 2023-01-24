@@ -32,17 +32,6 @@ ngOnChanges(): void {
     this.service.getadminproducts().subscribe(value=>{this.productvalue=value})
     this.getproducts();
   }
-  // edit(data:any){
-  //   this.service.editproduct(data.id).subscribe(value=>{this.productvalue=value});
-  // }
-
-  // delete(data:any)
-  // {
-  //   this.service.deleteadminproducts(data).subscribe()
-  //   console.log(data);
-  //   this.ngOnChanges()
-  //   alert("Product Deleted Successfully")
-  // }
   openDialog() {
     this.dialog.open(DialogComponent,{
       width:'40%'
@@ -88,11 +77,6 @@ deleteproduct(id:number)
       this.getproducts();
   }
 }
-
-
-
-
-
 applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();

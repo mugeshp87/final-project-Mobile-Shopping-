@@ -13,7 +13,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   this.product.getproducts().subscribe(data=>{
     this.val=data;
-
     this.val.forEach((a:any)=>{Object.assign(a,{quantity:1,total:a.Price})})
   })
 
@@ -21,6 +20,5 @@ export class ProductsComponent implements OnInit {
   addtocart(item:any)
   {
     this.cart.addtocart(item);
-
   }
 }

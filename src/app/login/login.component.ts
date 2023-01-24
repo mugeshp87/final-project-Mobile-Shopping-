@@ -7,7 +7,6 @@ import { Login } from './login';
 import { HttpClient } from '@angular/common/http';
 import { AuthguardService } from '../authguard.service';
 import { ToastrService } from 'ngx-toastr';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,10 +26,6 @@ select='any';
 
 
 
-//   Onsubmit(use:NgForm)
-//   {
-// console.log(this.loginform.value)
-// }
 
 Onlogin(use:NgForm){
   if(use.value.username==="admin"&&use.value.password=="Admin@123")
@@ -61,16 +56,3 @@ Onlogin(use:NgForm){
 }
 
 }
-// resetform(rform:NgForm)
-// {
-//   rform.reset()
-// }
-// setvalues(setvalue:NgForm)
-// {
-//   let logindetails={
-//     username:'diwahar',
-//     password:'Diwa',
-//     select:'3'
-//   }
-// setvalue.setValue(logindetails)
-// }

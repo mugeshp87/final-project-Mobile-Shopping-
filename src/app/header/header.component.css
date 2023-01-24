@@ -2,7 +2,7 @@ li{
     display: flex;
     background-color:rgb(196, 195, 244) ;
    justify-content: space-evenly;
-    padding: 20px;
+    padding: 25px;
     font: weight 300px;
 }
 li>ul{

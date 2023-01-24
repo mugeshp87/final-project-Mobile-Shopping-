@@ -5,8 +5,9 @@
   <label>Enter Your Username</label><br>
   <input type="text" formControlName="Username">
   <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('required')&&signupform.get('Username')?.touched">Username is required</div>
-  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('minlength')&&signupform.get('Username')?.touched">Username should be minimum of 5 characters </div>
-  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('maxlength')&&signupform.get('Username')?.touched">Username should have a maximum of 10 characters </div>
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('pattern')&&signupform.get('Username')?.touched">Username is in required format </div>
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('minlength')&&signupform.get('Username')?.touched">Username should be minimum of 4 characters </div>
+  <div class="text-danger" *ngIf="signupform.get('Username')?.hasError('maxlength')&&signupform.get('Username')?.touched">Username should have a maximum of 8 characters </div>
   <br>
   <pre></pre>
   <label>Enter Your Email</label><br>
