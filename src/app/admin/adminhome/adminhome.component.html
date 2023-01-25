@@ -1,9 +1,15 @@
-<h1>Admin Dashboard</h1>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
 <br>
 <ul>
+  <li><a routerLink="home"><img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></li>   
   <li ><a routerLink="view">View</a></li>
   <li><a routerLink="view">Add</a></li>
   <li><a routerLink="view">Delete</a></li>
+  <li><a (click)="logout()">Logout</a></li>
 </ul>
+</nav>
+<h1>Admin Dashboard</h1>
 <router-outlet></router-outlet>
+
 

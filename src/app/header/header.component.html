@@ -1,4 +1,4 @@
-<nav>
+<nav *ngIf="general.loggedin()">
   <li>
     <ul><a routerLink="home"><img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></ul>   
     <ul><a routerLink="home">Home</a></ul>
@@ -9,9 +9,7 @@
       <i style="font-size:25px" class="fas fa-cart-plus"></i>
     <div style="font-size:8px" class="badge bg-danger">{{totalitem}}</div>
     </button></ul>
-    <ul><a style="cursor:pointer" (click)="logout()"  *ngIf="!hideuserurl">Logout</a></ul>
+    <ul><a (click)="logout()" style="cursor:pointer" *ngIf="!hideuserurl">Logout</a></ul>
   </li>
 </nav>
 <router-outlet></router-outlet>
-
-

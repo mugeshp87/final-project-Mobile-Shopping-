@@ -70,6 +70,12 @@
       "Email": "saba@gmail.com",
       "Password": "Rajmugesh@87",
       "id": 9
+    },
+    {
+      "Username": "mugeshp",
+      "Email": "muge9@gmail.com",
+      "Password": "Rajmugeshp@8",
+      "id": 10
     }
   ],
   "Mobile": [
@@ -195,7 +201,7 @@
     {
       "id": 21,
       "Name": "iQOO Z6 Dynamo Black 6GB+128GB",
-      "Price": 16499,
+      "Price": 17499,
       "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1647925569876/def732ab15586562bfa1db57e478dae4.png.webp",
       "Variant": "6GB+128GB "
     },
@@ -205,6 +211,13 @@
       "Price": 59990,
       "Image": "https://exstatic-in.iqoo.com/Oz84QB3Wo0uns8j1/1645603796716/313ea2cfd9f3f9d6f9249d4cc3e3d245.png.webp",
       "Variant": "8GB+256GB"
+    },
+    {
+      "id": 234,
+      "Name": " joihvufj",
+      "Price": 78876,
+      "Image": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "Variant": "piouiugyft"
     }
   ]
 }

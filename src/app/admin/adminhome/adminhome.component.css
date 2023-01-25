@@ -13,7 +13,6 @@ ul{
     font-family: "chivo mono",monospace;
     display: flex;
     gap:80px;
-    
 }
 ul li{
     list-style-type: none;
@@ -30,11 +29,14 @@ ul li a{
     color:coral
 }
 ul:hover li a{
-    color:#3ac9c9
+    color:#1972cb
 }
 ul:hover li a:not(:hover)
 {
     color: white;
     opacity: 0.3;
     filter:blur(10px)
+}
+img{
+    width: 70px;
 }

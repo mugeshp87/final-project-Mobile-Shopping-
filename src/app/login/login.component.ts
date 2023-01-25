@@ -7,6 +7,7 @@ import { Login } from './login';
 import { HttpClient } from '@angular/common/http';
 import { AuthguardService } from '../authguard.service';
 import { ToastrService } from 'ngx-toastr';
+import { GeneralService } from '../services/general.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,8 @@ submitted=false;
 select='any';
   form: any;
  public loginform!:NgForm
-  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService,private toastr:ToastrService,) { }
+  constructor(private ser:SignupService,private router:Router,private http:HttpClient,private auth:AuthguardService,private toastr:ToastrService) {
+   }
 
   ngOnInit() {
   }
@@ -32,7 +34,7 @@ Onlogin(use:NgForm){
   {
     this.auth.logged=true;
     this.toastr.success("Login Success",use.value.username)
-    localStorage.setItem("LoggedInAdmin","admin")
+    localStorage.setItem("LoggedIn","admin")
     use.reset();
     this.router.navigate(['admin/home'])
   }
@@ -42,7 +44,7 @@ Onlogin(use:NgForm){
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){
       this.auth.logged=true;
-      localStorage.setItem('LoggedInUser',use.value.username)
+      localStorage.setItem('LoggedIn',use.value.username)
       this.toastr.success("Login Success","",{'positionClass':'toast-top-right'})
       use.reset();
       this.router.navigate(['home'])

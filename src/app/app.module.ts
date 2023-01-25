@@ -14,10 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import{AdminRoutes} from './admin/admin.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SuccessComponent } from './success/success.component';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -36,8 +34,9 @@ import { ToastrModule } from 'ngx-toastr';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatSlideToggleModule,MatCardModule,BrowserAnimationsModule,ToastrModule.forRoot(),],
+    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatCardModule,BrowserAnimationsModule,ToastrModule.forRoot(),],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[HeaderComponent]
 })
 export class AppModule { }

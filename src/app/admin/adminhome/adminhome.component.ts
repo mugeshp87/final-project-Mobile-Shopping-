@@ -16,6 +16,7 @@ export class AdminhomeComponent implements OnInit {
 logout()
 {
   this.toastr.success("Logged Out Successfully");
+  localStorage.clear();
   this.route.navigate(["/home"]);
 }
 }
