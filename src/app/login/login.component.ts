@@ -34,7 +34,7 @@ Onlogin(use:NgForm){
   {
     this.auth.logged=true;
     this.toastr.success("Login Success",use.value.username)
-    localStorage.setItem("LoggedIn","admin")
+    localStorage.setItem("LoggedInAdmin","admin")
     use.reset();
     this.router.navigate(['admin/home'])
   }
@@ -44,7 +44,7 @@ Onlogin(use:NgForm){
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){
       this.auth.logged=true;
-      localStorage.setItem('LoggedIn',use.value.username)
+      localStorage.setItem("LoggedInUser",use.value.username)
       this.toastr.success("Login Success","",{'positionClass':'toast-top-right'})
       use.reset();
       this.router.navigate(['home'])
@@ -56,5 +56,8 @@ Onlogin(use:NgForm){
   })
 
 }
+
+
+
 
 }

@@ -53,6 +53,7 @@ users: any;
     this.signupform.reset();
     this.router.navigate(['login'])
   });
+  
 //  console.log(this.signupform.get("Password")?.value)
 
 // console.log(this.signupform.get('Username')?.valueChanges.subscribe(data=>{

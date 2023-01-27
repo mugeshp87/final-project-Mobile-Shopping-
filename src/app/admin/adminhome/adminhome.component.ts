@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-adminhome',
@@ -9,9 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminhomeComponent implements OnInit {
 
-  constructor(public route:Router,private toastr:ToastrService) { }
+  constructor(public route:Router,private toastr:ToastrService,public service:GeneralService) { }
 
   ngOnInit() {
+    this.service.loggedin();
+   console.log(localStorage.getItem('LoggedInAdmin'))
   }
 logout()
 {
@@ -19,4 +22,5 @@ logout()
   localStorage.clear();
   this.route.navigate(["/home"]);
 }
+
 }
