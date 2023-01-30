@@ -13,8 +13,8 @@ export class GeneralService implements OnInit{
 loggedin()
 {
   console.log("hi team")
-  const user=localStorage.getItem("LoggedInAdmin")
-if(user!=null)
+  const user=localStorage.getItem('LoggedInUser')
+if(user)
 {
   console.log("Admin Logged In!!!")
   this.navbar=true;

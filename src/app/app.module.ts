@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [											
@@ -30,7 +31,8 @@ import { ToastrModule } from 'ngx-toastr';
       PagenotfoundComponent,
       AboutusComponent,
       CartComponent,
-      SuccessComponent
+      SuccessComponent,
+      SearchPipe
    ],
   imports: [
     BrowserModule,

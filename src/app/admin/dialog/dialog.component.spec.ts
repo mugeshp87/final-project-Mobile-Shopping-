@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogModule}from '@angular/material/dialog';
+import { InjectionToken } from '@angular/core';
 
 describe('DialogComponent', () => {
   let component: DialogComponent;
@@ -15,7 +16,7 @@ describe('DialogComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DialogComponent ],
-      providers:[FormBuilder,HttpClient,HttpHandler,
+      providers:[FormBuilder,HttpClient,HttpHandler,InjectionToken,
       {
       provide:ToastrService,
       useValue:ToastrService

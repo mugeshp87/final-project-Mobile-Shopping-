@@ -40,6 +40,7 @@ Onlogin(use:NgForm){
   }
   else
    this.http.get<any>('http://localhost:3000/users').subscribe(res=>{
+    console.log(res)
     const consumer=res.find((data:any)=>{
       return data.Username===use.value.username&&data.Password===use.value.password;})
     if(consumer){

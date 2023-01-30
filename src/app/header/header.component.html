@@ -1,14 +1,28 @@
-<nav>
+<nav *ngIf="log">
   <li>
     <ul><a routerLink="home"><img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></ul>   
     <ul><a routerLink="home">Home</a></ul>
     <ul><a routerLink="products">Products</a></ul>
+   <ul>
+    <div class="card">     
+    <div class="form-group"> 
+    <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+           placeholder="Enter text to search" 
+          autofocus>
+        </div>
+        <ul class="list-group list-group-flush">
+      <!-- <li class="list-items" *ngFor="let searchproduct of prouduct.getadminproducts()"></li> -->
+        </ul>
+    </div>
+      </ul>
     <ul  *ngIf="hideuserurl" ><a routerLink="login">Login</a></ul> 
     <ul  *ngIf="hideuserurl" ><a routerLink="Signup" >Signup</a></ul>
     <ul><button routerLink="cart" class="btn">
       <i style="font-size:25px" class="fas fa-cart-plus"></i>
     <div style="font-size:8px" class="badge bg-danger">{{totalitem}}</div>
-    </button></ul>
+    </button>
+  </ul>
+      
     <ul><a (click)="logout()" style="cursor:pointer" *ngIf="!hideuserurl">Logout</a></ul>
   </li>
 </nav>

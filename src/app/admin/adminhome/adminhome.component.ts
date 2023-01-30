@@ -9,12 +9,22 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./adminhome.component.css']
 })
 export class AdminhomeComponent implements OnInit {
-
+adminnav=false;
   constructor(public route:Router,private toastr:ToastrService,public service:GeneralService) { }
-
   ngOnInit() {
     this.service.loggedin();
    console.log(localStorage.getItem('LoggedInAdmin'))
+  }
+  loggedin()
+  {
+    let admin=localStorage.getItem('LoggedInAdmin')
+  if(admin)
+  {
+    this.adminnav=true;
+  }
+  else{
+    this.adminnav=false;
+  }
   }
 logout()
 {
