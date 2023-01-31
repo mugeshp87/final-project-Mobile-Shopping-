@@ -19,7 +19,7 @@ import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SearchPipe } from './search.pipe';
-
+import { JwtModule } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [											
     AppComponent,HeaderComponent,
@@ -36,7 +36,15 @@ import { SearchPipe } from './search.pipe';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,AdminRoutes, BrowserAnimationsModule,MatCardModule,BrowserAnimationsModule,ToastrModule.forRoot(),],
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AdminRoutes, 
+    BrowserAnimationsModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),],
   providers: [],
   bootstrap: [AppComponent],
   exports:[HeaderComponent]

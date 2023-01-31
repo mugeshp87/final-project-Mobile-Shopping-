@@ -54,6 +54,11 @@ Onlogin(use:NgForm){
    {
       this.toastr.error("user not found")
     }
+    
+  },
+  (error)=>
+  {
+    this.toastr.error("Error Occurs")
   })
 
 }

@@ -24,5 +24,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
    RouterModule, CommonModule,FormsModule,ToastrModule.forRoot(),MatDialogModule,MatToolbarModule,MatIconModule,MatButtonModule,MatTableModule,MatFormFieldModule,MatPaginatorModule,MatSortModule,ReactiveFormsModule,FormsModule,MatInputModule,AdminRoutes]
-})
+
+
+  })
 export class AdminModule { }

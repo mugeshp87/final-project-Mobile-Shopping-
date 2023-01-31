@@ -1,20 +1,20 @@
-<nav *ngIf="log">
+<nav >
   <li>
     <ul><a routerLink="home"><img class="logo" src="../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></ul>   
     <ul><a routerLink="home">Home</a></ul>
     <ul><a routerLink="products">Products</a></ul>
-   <ul>
-    <div class="card">     
+  
+    <!-- <div class="card">     
     <div class="form-group"> 
     <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
            placeholder="Enter text to search" 
           autofocus>
         </div>
         <ul class="list-group list-group-flush">
-      <!-- <li class="list-items" *ngFor="let searchproduct of prouduct.getadminproducts()"></li> -->
+      <li class="list-items" *ngFor="let searchproduct of prouduct.getadminproducts()"></li>
         </ul>
-    </div>
-      </ul>
+    </div> -->
+  
     <ul  *ngIf="hideuserurl" ><a routerLink="login">Login</a></ul> 
     <ul  *ngIf="hideuserurl" ><a routerLink="Signup" >Signup</a></ul>
     <ul><button routerLink="cart" class="btn">

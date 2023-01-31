@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { ResolveEnd, Router } from '@angular/router';
 import { GeneralService } from '../services/general.service';
 import { AdminserviceService } from '../services/adminservice.service';
+import { NavbarService } from '../services/navbar.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private cart: CartService,
     public route: Router,
-    public prouduct:AdminserviceService
+    public prouduct:AdminserviceService,public nav:NavbarService
   ) {}
   ngOnInit() {
     this.cart.getProducts().subscribe((res) => {
@@ -35,23 +36,23 @@ export class HeaderComponent implements OnInit {
     //   }
     // });
   }
-  log=()=>{
-  
-     var admin=localStorage.getItem('LoggedInUser')
-    console.log("mugesh")
-     if(admin)
-     {
-      this.hidenavbar=true;
-     }
-     else if(admin!=null)
-     {
-      this.hidenavbar=false;
-     }
-     else{
-      this.hidenavbar=false;
-     }
+  // log=()=>{
+  //    var admin=localStorage.getItem('LoggedInUser')
+  //   console.log("mugesh")
+  //    if(admin)
+  //    {
+  //     console.log("amar")
+  //     this.hidenavbar=true;
+  //    }
+    //  else if(admin!=null)
+    //  {
+    //   this.hidenavbar=false;
+    //  }
+    //  else{
+    //   console.log("false")
+    //   this.hidenavbar=false;
+    //  }
 
-  }
 
   logout() {
     this.route.navigate(['/home']);
