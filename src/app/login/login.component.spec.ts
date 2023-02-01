@@ -1,10 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement, InjectionToken } from '@angular/core';
-
 import { LoginComponent } from './login.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -12,9 +11,17 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],providers:[HttpClient,HttpHandler,InjectionToken]
-    })
-    .compileComponents();
+      declarations: [LoginComponent],
+      providers: [
+        HttpClient,
+        HttpHandler,
+        {
+          provide: ToastrService,
+          useValue: ToastrService,
+        },
+      ],
+      imports: [FormsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -12,10 +12,9 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ],
-      providers:[HttpClient,HttpHandler]
-    })
-    .compileComponents();
+      declarations: [ProductsComponent],
+      providers: [HttpClient, HttpHandler],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

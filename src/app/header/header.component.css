@@ -1,33 +1,33 @@
-li{
-    display: flex;
-    background-color:rgb(196, 195, 244) ;
-   justify-content: space-evenly;
-    padding: 25px;
-    font: weight 300px;
+li {
+  display: flex;
+  background-color: rgb(196, 195, 244);
+  justify-content: space-evenly;
+  padding: 25px;
+  font: weight 300px;
 }
-li>ul{
-padding-top: 20px;
+li > ul {
+  padding-top: 20px;
 }
-.logo{
-position: absolute;
-left: 10px;
-top: 0;;
-width: 120px;
-height: 120px;
+.logo {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 120px;
+  height: 120px;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
-a:hover{
-    background-color:rgb(23, 178, 126);
-   padding: 5px;
+a:hover {
+  background-color: rgb(23, 178, 126);
+  padding: 5px;
 }
-li a{
-    font-family:'Courgette',cursive;
+li a {
+  font-family: "Courgette", cursive;
 }
-.fas{
-    position: absolute;
-    top: 40px;
+.fas {
+  position: absolute;
+  top: 40px;
 }

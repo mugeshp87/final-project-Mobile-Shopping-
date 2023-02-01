@@ -1,8 +1,3 @@
-export class Login{
-    constructor(public username:String,
-        public password:string
-        )
-    {
-
-    }
+export class Login {
+  constructor(public username: String, public password: string) {}
 }

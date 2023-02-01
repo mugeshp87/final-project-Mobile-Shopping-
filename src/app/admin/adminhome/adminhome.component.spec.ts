@@ -1,10 +1,10 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement, InjectionToken } from '@angular/core';
-
 import { AdminhomeComponent } from './adminhome.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AdminhomeComponent', () => {
   let component: AdminhomeComponent;
@@ -12,7 +12,11 @@ describe('AdminhomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminhomeComponent ],providers:[HttpClient,HttpHandler,InjectionToken]
+      declarations: [ AdminhomeComponent ],providers:[HttpClient,HttpHandler,{
+        provide:ToastrService,
+        useValue:ToastrService
+        }],
+        imports:[RouterModule,RouterTestingModule]
     })
     .compileComponents();
   }));

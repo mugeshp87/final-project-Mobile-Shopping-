@@ -7,11 +7,14 @@ import { AdminserviceService } from './adminservice.service';
 describe('Service: Adminservice', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AdminserviceService,HttpClient,HttpHandler]
+      providers: [AdminserviceService, HttpClient, HttpHandler],
     });
   });
 
-  it('should ...', inject([AdminserviceService], (service: AdminserviceService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should ...', inject(
+    [AdminserviceService],
+    (service: AdminserviceService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

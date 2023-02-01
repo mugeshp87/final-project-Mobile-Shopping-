@@ -7,11 +7,14 @@ import { ProductsserviceService } from './productsservice.service';
 describe('Service: Productsservice', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ProductsserviceService,HttpClient,HttpHandler]
+      providers: [ProductsserviceService, HttpClient, HttpHandler],
     });
   });
 
-  it('should ...', inject([ProductsserviceService], (service: ProductsserviceService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should ...', inject(
+    [ProductsserviceService],
+    (service: ProductsserviceService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

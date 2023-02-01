@@ -12,41 +12,42 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import{AdminRoutes} from './admin/admin.routing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MatCardModule} from '@angular/material/card';
+import { AdminRoutes } from './admin/admin.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { ToastrModule } from 'ngx-toastr';
-import { SearchPipe } from './search.pipe';
-import { JwtModule } from '@auth0/angular-jwt';
+import { CommonModule } from '@angular/common';
 @NgModule({
-  declarations: [											
-    AppComponent,HeaderComponent,
-      ProductsComponent,
-      LoginComponent,
-      SignupComponent,
-      FooterComponent,
-      HomeComponent,
-      PagenotfoundComponent,
-      AboutusComponent,
-      CartComponent,
-      SuccessComponent,
-      SearchPipe
-   ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ProductsComponent,
+    LoginComponent,
+    SignupComponent,
+    FooterComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    AboutusComponent,
+    CartComponent,
+    SuccessComponent,
+  ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminRoutes, 
+    AdminRoutes,
     BrowserAnimationsModule,
     MatCardModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),],
+    ToastrModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[HeaderComponent]
+  exports: [HeaderComponent],
 })
-export class AppModule { }
+export class AppModule {}

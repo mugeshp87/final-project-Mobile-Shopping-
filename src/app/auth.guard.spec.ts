@@ -1,5 +1,5 @@
-import { InjectionToken } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { ToastrService } from 'ngx-toastr';
 
 import { AuthGuard } from './auth.guard';
 
@@ -8,7 +8,12 @@ describe('AuthGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers:[InjectionToken]
+      providers: [
+        {
+          provide: ToastrService,
+          useValue: ToastrService,
+        },
+      ],
     });
     guard = TestBed.inject(AuthGuard);
   });

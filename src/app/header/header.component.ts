@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { ResolveEnd, Router } from '@angular/router';
-import { GeneralService } from '../services/general.service';
+import { Router } from '@angular/router';
 import { AdminserviceService } from '../services/adminservice.service';
 import { NavbarService } from '../services/navbar.service';
 @Component({
@@ -12,12 +11,13 @@ import { NavbarService } from '../services/navbar.service';
 export class HeaderComponent implements OnInit {
   public totalitem: number = 0;
   hideuserurl: boolean = false;
-  hidenavbar:boolean=false;
+  hidenavbar: boolean = false;
   user!: string;
   constructor(
     private cart: CartService,
     public route: Router,
-    public prouduct:AdminserviceService,public nav:NavbarService
+    public prouduct: AdminserviceService,
+    public nav: NavbarService
   ) {}
   ngOnInit() {
     this.cart.getProducts().subscribe((res) => {
@@ -44,15 +44,14 @@ export class HeaderComponent implements OnInit {
   //     console.log("amar")
   //     this.hidenavbar=true;
   //    }
-    //  else if(admin!=null)
-    //  {
-    //   this.hidenavbar=false;
-    //  }
-    //  else{
-    //   console.log("false")
-    //   this.hidenavbar=false;
-    //  }
-
+  //  else if(admin!=null)
+  //  {
+  //   this.hidenavbar=false;
+  //  }
+  //  else{
+  //   console.log("false")
+  //   this.hidenavbar=false;
+  //  }
 
   logout() {
     this.route.navigate(['/home']);

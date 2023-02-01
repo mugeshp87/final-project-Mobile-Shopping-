@@ -1,56 +1,52 @@
-.footer{
-    background-color: #242329;
-    height: 320px;
-    color: white;
+.footer {
+  background-color: #242329;
+  height: 320px;
+  color: white;
 }
-h1{
-    color: white;
-    font-family: 'sofia',serif;
+h1 {
+  color: white;
+  font-family: "sofia", serif;
 }
-hr{
-    color: white;
-    font-weight: 800;
-    background-color: aliceblue;
-    
+hr {
+  color: white;
+  font-weight: 800;
+  background-color: aliceblue;
 }
-i{
-    size: 40px;
+i {
+  size: 40px;
 }
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-li{
-    list-style-type: none;
-    
+li {
+  list-style-type: none;
 }
-.brandlogos{
-    margin-right:300px
-
+.brandlogos {
+  margin-right: 300px;
 }
-.brandlogos > i{
-    padding: 10px;
+.brandlogos > i {
+  padding: 10px;
 }
-.brandlogos > i:hover{
-    background-color: lightcoral;
-    padding:max-content;
+.brandlogos > i:hover {
+  background-color: lightcoral;
+  padding: max-content;
 }
-.footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px;
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
 }
-.footersmalltext{
-   position: absolute;
-   left: 780px;
-   margin-top: 260px;
-   
+.footersmalltext {
+  position: absolute;
+  left: 780px;
+  margin-top: 260px;
 }
-.second-row{
-    margin-left: 480px;
+.second-row {
+  margin-left: 480px;
 }
-hr{
-    background-color: aliceblue;
+hr {
+  background-color: aliceblue;
 }

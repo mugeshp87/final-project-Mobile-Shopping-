@@ -1,27 +1,23 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavbarService {
-  visible!:boolean;
+  visible!: boolean;
 
-  constructor() { this.visible=false}
-  
-  hide()
-  {
-    this.visible=false;
-    console.log("hiii")
+  constructor() {
+    this.visible = false;
   }
 
- show()
- {
-  this.visible=true
- }
-toggle()
-{
-  this.visible=!this.visible
-}
-useful()
-{}
+  hide() {
+    this.visible = false;
+  }
+
+  show() {
+    this.visible = true;
+  }
+  toggle() {
+    this.visible = !this.visible;
+  }
 }

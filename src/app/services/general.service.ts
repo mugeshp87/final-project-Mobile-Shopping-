@@ -1,26 +1,18 @@
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class GeneralService implements OnInit{
-  navbar=false;
-  constructor() { }
-  ngOnInit(): void {
-    console.log(localStorage.getItem("LoggedInAdmin"))
- console.log("Hello");
+export class GeneralService implements OnInit {
+  navbar = false;
+  constructor() {}
+  ngOnInit(): void {}
+  loggedin() {
+    const user = localStorage.getItem('LoggedInUser');
+    if (user) {
+      this.navbar = true;
+    } else {
+      this.navbar = false;
+    }
   }
-loggedin()
-{
-  console.log("hi team")
-  const user=localStorage.getItem('LoggedInUser')
-if(user)
-{
-  console.log("Admin Logged In!!!")
-  this.navbar=true;
-}
-else{
-  this.navbar=false;
-}
-}
 }

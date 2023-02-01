@@ -13,10 +13,9 @@ describe('AboutusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[RouterModule,RouterTestingModule],
-      declarations: [ AboutusComponent ]
-    })
-    .compileComponents();
+      imports: [RouterModule, RouterTestingModule],
+      declarations: [AboutusComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

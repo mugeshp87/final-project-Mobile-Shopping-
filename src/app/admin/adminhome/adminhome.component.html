@@ -8,17 +8,27 @@
   <li><a (click)="logout()">Logout</a></li>
 </ul>
 </nav> -->
-<nav >
+<nav>
   <li>
-    <ul><a routerLink="home"><img class="logo" src="../../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png" ></a></ul>   
-    <ul><a routerLink="view">View</a></ul>
-    <ul><a routerLink="view">Add</a></ul>
+    <ul>
+      <a routerLink="home"
+        ><img
+          class="logo"
+          src="../../../assets/Screenshot from 2023-01-10 09-02-54-PhotoRoom.png-PhotoRoom.png"
+      /></a>
+    </ul>
+    <ul>
+      <a routerLink="view">View</a>
+    </ul>
+    <ul>
+      <a routerLink="view">Add</a>
+    </ul>
     <!-- <ul ><a routerLink="login">Login</a></ul> 
     <ul ><a routerLink="Signup" >Signup</a></ul> -->
-    <ul><a (click)="logout()" style="cursor:pointer" >Logout</a></ul>
+    <ul>
+      <a (click)="logout()" style="cursor: pointer">Logout</a>
+    </ul>
   </li>
 </nav>
 <h1>Admin Dashboard</h1>
 <router-outlet></router-outlet>
-
-

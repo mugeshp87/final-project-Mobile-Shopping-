@@ -62,27 +62,26 @@ button{
       background:whitesmoke;
     }
   } */
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  table {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  img{
+.example-spacer {
+  flex: 1 1 auto;
+}
+table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+img {
   width: 150px;
-  }
-td,th{
+}
+td,
+th {
   padding: 20px;
 }
 /* .contain{
   max-width: 1200px;
   margin: 0 auto ;
 } */
-
- 

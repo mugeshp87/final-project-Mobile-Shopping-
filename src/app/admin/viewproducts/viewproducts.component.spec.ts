@@ -1,10 +1,16 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement, InjectionToken } from '@angular/core';
-
 import { ViewproductsComponent } from './viewproducts.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ViewproductsComponent', () => {
   let component: ViewproductsComponent;
@@ -12,9 +18,31 @@ describe('ViewproductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewproductsComponent],providers:[HttpClient,HttpHandler,InjectionToken]
-    })
-    .compileComponents();
+      declarations: [ViewproductsComponent],
+      providers: [
+        HttpClient,
+        HttpHandler,
+        {
+          provide: ToastrService,
+          useValue: ToastrService,
+        },
+        MatToolbar,
+        MatIcon,
+        MatFormField,
+        MatPaginator,
+        MatTableDataSource,
+      ],
+      imports: [
+        MatDialogModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -65,12 +65,11 @@ a:hover {
 }
 
 .about-us-info h2 {
-  font-family:'Courgette';
+  font-family: "Courgette";
   color: rgb(0, 0, 0);
   font-size: 40pt;
   text-align: center;
 }
-
 
 .about-us-info p {
   color: white;

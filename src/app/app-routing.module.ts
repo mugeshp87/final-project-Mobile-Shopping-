@@ -12,20 +12,44 @@ import { SignupComponent } from './signup/signup.component';
 import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
-{path:'home',title:"Home",component:HomeComponent},
-{path:'products',title:"Products",component:ProductsComponent,canActivate:[AuthGuard]},
-{path:'login',title:"Login",component:LoginComponent},
-{path:'Signup',title:"Signup",component:SignupComponent},
-{path:'aboutus',title:"AboutUs",component:AboutusComponent,canActivate:[AuthGuard]},
-{path:'cart',title:"Cart",component:CartComponent,canActivate:[AuthGuard]},
-{path:'success',title:"Success",component:SuccessComponent,canActivate:[AuthGuard]},
-{path:'admin',title:"Admin",loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)},
-{path:'',redirectTo:'/home',pathMatch:'full'},
-{path:'**',component:PagenotfoundComponent}
+  { path: 'home', title: 'Home', component: HomeComponent },
+  {
+    path: 'products',
+    title: 'Products',
+    component: ProductsComponent,
+  },
+  { path: 'login', title: 'Login', component: LoginComponent },
+  { path: 'Signup', title: 'Signup', component: SignupComponent },
+  {
+    path: 'aboutus',
+    title: 'AboutUs',
+    component: AboutusComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'cart',
+    title: 'Cart',
+    component: CartComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'success',
+    title: 'Success',
+    component: SuccessComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin',
+    title: 'Admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((mod) => mod.AdminModule),
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

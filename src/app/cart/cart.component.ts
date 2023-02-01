@@ -10,7 +10,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
   public product: any = [];
   public grandtotal: number = 0;
-data: any;
+  data: any;
   constructor(private cart: CartService, private route: Router) {}
 
   ngOnInit() {
@@ -25,7 +25,7 @@ data: any;
   deletecart() {
     this.cart.removeallcart();
   }
-  success(data:any) {
+  success(data: any) {
     this.route.navigate(['success']);
     setTimeout(() => {
       this.route.navigate(['home']);
