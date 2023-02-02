@@ -44,7 +44,6 @@ button:hover {
 }
 .series{
 margin: 50px;
-background-color: #f2f2f8;
 font-size: 30px;
 display: flex;
 line-height:24px;
@@ -55,18 +54,12 @@ padding:26px 36px;
   text-decoration: none;
   display: inline-block;
   margin-right:40px;
+  cursor: pointer;
 
 }
 .thick-font{
 font-family: languageFont,HanyiVar-vivo-thick;
 }
-.series:active{
+a span:active,span:hover{
   color: blue;
 }
-/* isplay: flex;
-    flex-wrap: wrap;
-    line-height: 24px;
-    padding: 26px 36px; */
-    /* margin-right: 40px;
-    color: #242933;
-    display: inline-block */

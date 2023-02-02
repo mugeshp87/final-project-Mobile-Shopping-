@@ -17,7 +17,6 @@ export class AdminhomeComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.service.loggedin();
-    console.log(localStorage.getItem('LoggedInAdmin'));
   }
   loggedin() {
     let admin = localStorage.getItem('LoggedInAdmin');

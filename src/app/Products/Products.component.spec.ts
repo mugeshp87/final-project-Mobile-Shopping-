@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { ProductsComponent } from './Products.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -13,7 +14,11 @@ describe('ProductsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ProductsComponent],
-      providers: [HttpClient, HttpHandler],
+      providers: [HttpClient, HttpHandler,
+        {
+          provide: ToastrService,
+          useValue: ToastrService,
+        },],
     }).compileComponents();
   }));
 

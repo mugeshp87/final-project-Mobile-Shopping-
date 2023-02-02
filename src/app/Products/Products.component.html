@@ -1,14 +1,12 @@
 <div class="series">
-<a href=""><span class="thick-font">All</span></a>
-<a href="">Neo Series</a>
-<a href="">11 Series</a>
-<a href="">Z Series</a>
-<a href="">9 Series</a>
-<a href="">7 Series</a>
-
+  <a (click)="ngOnInit()"><span class="thick-font">All</span></a>
+  <a (click)="getneo()"><span class="thick-font">Neo Series</span></a>
+  <a (click)="geteleven()"><span class="thick-font">11 Series</span></a>
+  <a (click)="getzseries()"><span class="thick-font">Z Series</span></a>
+  <a (click)="getnineseries()"><span class="thick-font">9 Series</span></a>
 </div>
 <div class="hrlo">
-  <mat-card class="example-card" *ngFor="let mobile of val">
+  <mat-card class="example-card" *ngFor="let mobile of value">
     <img class="mat-card-image" src="{{ mobile.Image }}" alt="Mobile" />
     <mat-card-footer>
       <mat-card-title class="Mname">{{ mobile.Name }}</mat-card-title>
