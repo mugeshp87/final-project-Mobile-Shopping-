@@ -41,7 +41,9 @@ export class LoginComponent implements OnInit {
       this.http.get<any>('http://localhost:3000/users').subscribe(
         (res) => {
           const consumer = res.find((data: any) => {
+     console.log(res);
             return (
+
               data.Username === use.value.username &&
               data.Password === use.value.password
             );

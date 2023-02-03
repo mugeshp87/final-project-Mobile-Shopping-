@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { Router } from '@angular/router';
+import { ResolveEnd, Router } from '@angular/router';
 import { AdminserviceService } from '../services/adminservice.service';
 import { NavbarService } from '../services/navbar.service';
 @Component({
@@ -23,18 +23,18 @@ export class HeaderComponent implements OnInit {
     this.cart.getProducts().subscribe((res) => {
       this.totalitem = res.length;
     });
-    // this.route.events.subscribe((routerData: any) => {
-    //   if (routerData instanceof ResolveEnd) {
-    //     if (
-    //       localStorage.getItem('LoggedInUser') == null &&
-    //       routerData.url == '/home'
-    //     ) {
-    //       this.hideuserurl = true;
-    //     } else {
-    //       this.hideuserurl = false;
-    //     }
-    //   }
-    // });
+    this.route.events.subscribe((routerData: any) => {
+      if (routerData instanceof ResolveEnd) {
+        if (
+          localStorage.getItem('LoggedInUser') == null &&
+          routerData.url == '/home'
+        ) {
+          this.hideuserurl = true;
+        } else {
+          this.hideuserurl = false;
+        }
+      }
+    });
   }
   // log=()=>{
   //    var admin=localStorage.getItem('LoggedInUser')

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../services/cart.service';
 import { ProductsserviceService } from '../services/productsservice.service';
+import { products } from '../interfaces';
 @Component({
   selector: 'app-Products',
   templateUrl: './Products.component.html',
@@ -18,7 +19,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.product.getproducts().subscribe((data) => {
       this.value = data;
-      this.value.forEach((a: any) => {
+      this.value.forEach((a: products) => {
         Object.assign(a, { quantity: 1, total: a.Price });
       });
     });

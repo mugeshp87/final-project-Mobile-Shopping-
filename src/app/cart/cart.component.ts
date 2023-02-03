@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { products } from '../interfaces';
 
 @Component({
   selector: 'app-cart',
@@ -32,4 +33,22 @@ export class CartComponent implements OnInit {
       this.cart.removeallcart();
     }, 3000);
   }
+//   increase(item:{quantity:number}) {
+//       item.quantity+=1;
+// }
+
+//  decrease(item:{quantity:number}) {
+//   if(item.quantity!=1)
+//     item.quantity-=1;
+//    }
+
+increase(item:{quantity:number}) {
+  this.cart.updateCartItems(item.quantity+=1)
+}
+
+decrease(item:{quantity:number}) {
+if(item.quantity!=1)
+this.cart.updateCartItems(item.quantity-=1)
+}
+
 }

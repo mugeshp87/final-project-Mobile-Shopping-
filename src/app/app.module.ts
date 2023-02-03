@@ -19,6 +19,10 @@ import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { JwtModule } from '@auth0/angular-jwt';
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +49,13 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["http://localhost:3000/"],
+        disallowedRoutes: ["http://localhost:3000/users"],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
