@@ -23,12 +23,9 @@
               <td>&#8377;{{ item.Price }}</td>
               <td>{{ item.Variant }}</td>
               <td>
-                <i class="fa-solid fa-minus" (click)="decrease(item)"></i>
                 {{ item.quantity }}
-              
-                <i class="fa-solid fa-plus" (click)="increase(item)"></i>
               </td>
-              <td>{{ item.quantity*item.total}}</td>
+              <td>{{ item.total }}</td>
               <td>
                 <button (click)="removeitemcart(item)" class="btn btn-danger">
                   <i class="fas fa-trash-alt"></i>

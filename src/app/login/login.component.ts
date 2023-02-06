@@ -43,14 +43,21 @@ export class LoginComponent implements OnInit {
           const consumer = res.find((data: any) => {
      console.log(res);
             return (
-
               data.Username === use.value.username &&
               data.Password === use.value.password
             );
           });
           if (consumer) {
             this.auth.logged = true;
-            localStorage.setItem('LoggedInUser', use.value.username);
+      
+            const sign=require('jwt-encode');
+            const secret="Rajmugeshp@8778";
+            const data={
+              Username:use.value.username,
+              role:"User",
+            }
+           const jwt=sign(data,secret)
+           localStorage.setItem('LoggedInUser',jwt);
             this.toastr.success('Login Success', '', {
               positionClass: 'toast-top-right',
             });

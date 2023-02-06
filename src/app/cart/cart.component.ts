@@ -33,22 +33,6 @@ export class CartComponent implements OnInit {
       this.cart.removeallcart();
     }, 3000);
   }
-//   increase(item:{quantity:number}) {
-//       item.quantity+=1;
-// }
 
-//  decrease(item:{quantity:number}) {
-//   if(item.quantity!=1)
-//     item.quantity-=1;
-//    }
-
-increase(item:{quantity:number}) {
-  this.cart.updateCartItems(item.quantity+=1)
-}
-
-decrease(item:{quantity:number}) {
-if(item.quantity!=1)
-this.cart.updateCartItems(item.quantity-=1)
-}
 
 }

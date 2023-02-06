@@ -23,18 +23,18 @@ export class HeaderComponent implements OnInit {
     this.cart.getProducts().subscribe((res) => {
       this.totalitem = res.length;
     });
-    this.route.events.subscribe((routerData: any) => {
-      if (routerData instanceof ResolveEnd) {
-        if (
-          localStorage.getItem('LoggedInUser') == null &&
-          routerData.url == '/home'
-        ) {
-          this.hideuserurl = true;
-        } else {
-          this.hideuserurl = false;
-        }
-      }
-    });
+    // this.route.events.subscribe((routerData: any) => {
+    //   if (routerData instanceof ResolveEnd) {
+    //     if (
+    //       localStorage.getItem('LoggedInUser') == null &&
+    //       routerData.url == '/home'
+    //     ) {
+    //       this.hideuserurl = true;
+    //     } else {
+    //       this.hideuserurl = false;
+    //     }
+    //   }
+    // });
   }
   // log=()=>{
   //    var admin=localStorage.getItem('LoggedInUser')
