@@ -1,15 +1,14 @@
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../auth.guard';
+import { AdminGuard } from '../admin.guard';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { ViewproductsComponent } from './viewproducts/viewproducts.component';
 const routes: Routes = [
   {
     path: 'home',
     title: 'Admin',
-    component: AdminhomeComponent,
+    component: AdminhomeComponent, canActivate:[AdminGuard],
     children: [
-      { path: 'view', title: 'View', component: ViewproductsComponent },
-      { path: 'add', title: 'Add', component: ViewproductsComponent },
+      { path: 'view', title: 'View', component: ViewproductsComponent , canActivate:[AdminGuard] },
     ],
   },
 ];

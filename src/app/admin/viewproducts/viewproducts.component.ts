@@ -35,14 +35,24 @@ export class ViewproductsComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnChanges(): void {
-    this.service.getadminproducts().subscribe((value) => {
-      this.productvalue = value;
-    });
+    this.service.getadminproducts().subscribe(
+      (value) => {
+        this.productvalue = value;
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
+    );
   }
   ngOnInit() {
-    this.service.getadminproducts().subscribe((value) => {
-      this.productvalue = value;
-    });
+    this.service.getadminproducts().subscribe(
+      (value) => {
+        this.productvalue = value;
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
+    );
     this.getproducts();
   }
   openDialog() {
@@ -51,11 +61,16 @@ export class ViewproductsComponent implements OnInit, OnChanges {
         width: '40%',
       })
       .afterClosed()
-      .subscribe((val) => {
-        if (val === 'Save') {
-          this.getproducts();
+      .subscribe(
+        (val) => {
+          if (val === 'Save') {
+            this.getproducts();
+          }
+        },
+        (error) => {
+          this.toastr.error('Error Occurs');
         }
-      });
+      );
   }
 
   getproducts() {
@@ -81,17 +96,14 @@ export class ViewproductsComponent implements OnInit, OnChanges {
       });
   }
   deleteproduct(id: number) {
-    if (confirm('Are you sure you want to delete the product?')) {
-      this.service.deleteproduct(id).subscribe((res) => {
-        this.toastr.success('Product Deleted Successfully');
-      });
-      this.getproducts();
-    }
+    this.service.deleteproduct(id).subscribe((res) => {
+      this.toastr.success('Product Deleted Successfully');
+    });
+    this.getproducts();
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }

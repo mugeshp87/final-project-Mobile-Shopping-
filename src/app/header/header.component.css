@@ -25,7 +25,8 @@ a:hover {
   padding: 5px;
 }
 li a {
-  font-family: "Courgette", cursive;
+  font-family: "Leckerli One", cursive;
+  font-weight: bold;
 }
 .fas {
   position: absolute;

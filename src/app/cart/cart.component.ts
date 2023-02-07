@@ -26,12 +26,18 @@ export class CartComponent implements OnInit {
   deletecart() {
     this.cart.removeallcart();
   }
-  success(data: any) {
-    this.route.navigate(['success']);
-    setTimeout(() => {
-      this.route.navigate(['home']);
-      this.cart.removeallcart();
-    }, 3000);
+  success(data: products) {
+    const user=localStorage.getItem('LoggedInUser')
+    if(user!=null){
+      data.user=user;
+      console.log(data)
+      this.route.navigate(['success']);
+      setTimeout(() => {
+        this.route.navigate(['home']);
+        this.cart.removeallcart();
+      }, 3000);
+    }
+
   }
 
 

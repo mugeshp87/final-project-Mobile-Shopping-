@@ -5,10 +5,25 @@ import { Injectable } from '@angular/core';
 })
 export class NavbarService {
   visible!: boolean;
-
-  constructor() {
-    this.visible = false;
-    
+  constructor() {}
+  shownav() {
+    if (localStorage.getItem('LoggedInUser')) {
+      return (this.visible = true);
+    }
+    if (localStorage.getItem('LoggedInAdmin')) {
+      return (this.visible = false);
+    } else if (localStorage != null) {
+      return (this.visible = true);
+    } else {
+      return (this.visible = false);
+    }
+  }
+  showadminnav() {
+    if (localStorage.getItem('LoggedInAdmin')) {
+      return (this.visible = true);
+    } else {
+      return (this.visible = false);
+    }
   }
 
   hide() {
@@ -17,7 +32,6 @@ export class NavbarService {
 
   show() {
     this.visible = true;
-  
   }
   toggle() {
     this.visible = !this.visible;

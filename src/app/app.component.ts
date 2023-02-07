@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarService } from './services/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,5 @@ import { NavbarService } from './services/navbar.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'project';
-  constructor(public router: Router,public navbar:NavbarService) {}
+  constructor(public router: Router) {}
 }

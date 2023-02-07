@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   constructor(
     private product: ProductsserviceService,
     private cart: CartService,
-    private toastr:ToastrService
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -25,6 +25,8 @@ export class ProductsComponent implements OnInit {
     });
   }
   addtocart(item: any) {
+    
+    this.toastr.success('Product Added To The Cart Successfully!!');
     this.cart.addtocart(item);
   }
   getneo() {
@@ -35,35 +37,39 @@ export class ProductsComponent implements OnInit {
     });
   }
   geteleven() {
-    this.product.getproducts().subscribe((res: any) => {
-      this.value = res.filter((eleven: { Name: String }) => {
-        return eleven.Name.includes('11');
-      });
-    },
-    (error) => {
-      this.toastr.error('Error Occurs');
-    }
+    this.product.getproducts().subscribe(
+      (res: any) => {
+        this.value = res.filter((eleven: { Name: String }) => {
+          return eleven.Name.includes('11');
+        });
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
     );
   }
   getzseries() {
-    this.product.getproducts().subscribe((res: any) => {
-      this.value = res.filter((zseries: { Name: String }) => {
-        return zseries.Name.includes('Z');
-      });
-    },(error) => {
-      this.toastr.error('Error Occurs');
-    }
+    this.product.getproducts().subscribe(
+      (res: any) => {
+        this.value = res.filter((zseries: { Name: String }) => {
+          return zseries.Name.includes('Z');
+        });
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
     );
   }
   getnineseries() {
-    this.product.getproducts().subscribe((res: any) => {
-      this.value = res.filter((nine: { Name: String }) => {
-        return nine.Name.includes('9');
-      });
-    },
-    (error) => {
-      this.toastr.error('Error Occurs');
-    }
+    this.product.getproducts().subscribe(
+      (res: any) => {
+        this.value = res.filter((nine: { Name: String }) => {
+          return nine.Name.includes('9');
+        });
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
     );
   }
 }

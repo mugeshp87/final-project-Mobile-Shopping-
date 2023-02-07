@@ -4,9 +4,6 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthguardService {
-  getJWTToken() {
-    throw new Error('Method not implemented.');
-  }
   logged: boolean = false;
   constructor(public router: Router) {}
 }

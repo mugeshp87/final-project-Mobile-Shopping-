@@ -40,5 +40,5 @@ export class CartService {
   }
   updateCartItems(items: number) {
     this.productList.next(items);
-}
+  }
 }

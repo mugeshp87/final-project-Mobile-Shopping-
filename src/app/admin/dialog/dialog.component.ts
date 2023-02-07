@@ -61,6 +61,9 @@ export class DialogComponent implements OnInit {
         this.toaster.success('Product Updated Successfully');
         this.productform.reset();
         this.dialogref.close('Update');
+      },
+      (error) => {
+        this.toaster.error('Error Occurs');
       });
   }
 }

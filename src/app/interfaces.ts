@@ -6,4 +6,6 @@ export interface products{
     Variant:String;
     quantity:number;
     total:number;
+    user:string;
+    
 }

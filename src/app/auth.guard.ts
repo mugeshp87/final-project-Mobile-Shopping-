@@ -25,13 +25,15 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.authservice.logged) {
-      return true;
-    } else {
-      this.toastr.warning(
-        'You need to login to proceed,Kindly go and login!!!!'
-      );
-      return false;
-    }
+      const user=localStorage.getItem('LoggedInUser')
+      if(user!=null){
+        return true;
+      }
+      else{
+        this.toastr.warning(
+          'You need to login to proceed,Kindly go and login!!!!'
+        );
+        return false;
+        }
   }
 }

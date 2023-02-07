@@ -9,7 +9,7 @@ h1 {
   font-size: xx-large;
   font-size: 50px;
 }
-/* ul{
+ul{
     font-family: "chivo mono",monospace;
     display: flex;
     gap:80px;
@@ -23,12 +23,12 @@ ul li a{
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    /* color: white; */
-/* padding: 10px;
+    color: white;
+    padding: 10px;
     transition: 1s ease;
     color:coral
-} */
-/* ul:hover li a{
+}
+ul:hover li a{
     color:#1972cb
 }
 ul:hover li a:not(:hover)
@@ -39,4 +39,4 @@ ul:hover li a:not(:hover)
 }
 img{
     width: 70px;
-} */
+}
