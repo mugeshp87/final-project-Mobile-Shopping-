@@ -7,5 +7,6 @@ export interface products{
     quantity:number;
     total:number;
     user:any;
+    password:String;
     
 }

@@ -25,8 +25,9 @@ isadmin()
 }
 else{
   console.log("noonon")
-  return false;
   this.toastr.warning('You Are Not Allowed TO Visit This Page')
+  return false;
+  
 }
 
 }

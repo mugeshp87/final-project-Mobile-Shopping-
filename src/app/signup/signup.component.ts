@@ -17,7 +17,6 @@ import { SignupService } from './signup.service';
 export class SignupComponent implements OnInit {
   signupform!: FormGroup;
   users: any;
-
   constructor(
     private fb: FormBuilder,
     private signservice: SignupService,
@@ -36,7 +35,7 @@ export class SignupComponent implements OnInit {
       Email: new FormControl('muge9@gmail.com', [
         Validators.required,
         Validators.minLength(5),
-        Validators.maxLength(15),
+        Validators.maxLength(20),
         Validators.pattern('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$'),
       ]),
       Password: new FormControl('Rajmugeshp@8', [
@@ -48,30 +47,22 @@ export class SignupComponent implements OnInit {
         ),
       ]),
     });
-    // this.signupform.controls['users'].patchValue(["team"]);
-
-    // this.signupform.statusChanges.subscribe(data=>{
-    //   console.log(data)
-    // })
-    // const modeluser={
-    //   Username:"",
-    //   Email:"muthusri@rhfj",
-    //   Password:"ghijfefi"
-    // }
-    // this.signupform.setValue(modeluser)
-    // this.signupform.patchValue(modeluser)
   }
-  // get frmarr()
-  // {
-  //   return this.signupform.controls['users'] as FormArray;
-  // }
-  // getControls(form:FormGroup,key:string)
-  // {
-  // return (<FormArray>form.controls[key]).controls
-  // }
+
+
   registerusers() {
     this.signservice.addusers(this.signupform.value).subscribe((res) => {
-      this.toastr.success('Succesfully Registered'), this.signupform.reset();
+     this.signupform.reset();
+      const sign = require('jwt-encode');
+      const secret = 'User@';
+      const data = {
+        Username: this.signupform.value,
+        role: 'User',
+        
+      };
+      const jwt = sign(data, secret);
+      localStorage.setItem('LoggedInUser', jwt);
+      this.toastr.success("User Registered Successfully")
       this.router.navigate(['login']);
     });
   }

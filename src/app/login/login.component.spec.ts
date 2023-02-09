@@ -3,12 +3,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-
+let use:NgForm;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [LoginComponent],
@@ -33,4 +33,10 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('',()=>{
+    component.onclick()
+  })
+  it('',()=>{
+    component.Onlogin(use)
+  })
 });

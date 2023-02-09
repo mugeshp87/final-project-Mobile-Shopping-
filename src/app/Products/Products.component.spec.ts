@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
-
+  let item :any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ProductsComponent],
@@ -31,4 +31,8 @@ describe('ProductsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('',()=>{
+    component.addtocart(item)
+  })
+
 });

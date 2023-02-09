@@ -21,13 +21,13 @@
       <div class="password">
       <label for="password">Password</label>
       <input
-        type="password"
+        [type]="password"
         class="form-control"
         required
         name="password"
         [(ngModel)]="login.password"
-      /><i class="fa-solid fa-eye"></i>
-      <i class="fa-solid fa-eye-slash"></i>
+      /><i class="fa-solid fa-eye fa-xl" (click)="onclick()" *ngIf="!showpassword"></i>
+      <i class="fa-solid fa-eye-slash fa-xl" (click)="onclick()" *ngIf="showpassword"></i>
       <pre></pre>
       </div>
       <button

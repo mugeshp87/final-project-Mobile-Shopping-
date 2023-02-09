@@ -15,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 describe('ViewproductsComponent', () => {
   let component: ViewproductsComponent;
   let fixture: ComponentFixture<ViewproductsComponent>;
-
+  let row:any;
+  let event:Event;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ViewproductsComponent],
@@ -54,4 +55,13 @@ describe('ViewproductsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('',()=>{
+    component.openDialog();
+  })
+  it('',()=>{
+    component.editproduct(row);
+  })
+  it('',()=>{
+    component.applyFilter(event);
+  })
 });

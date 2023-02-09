@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   select = 'any';
   form: any;
   public loginform!: NgForm;
+  password:any;
+  showpassword=false;
   constructor(
     private ser: SignupService,
     private router: Router,
@@ -25,9 +27,23 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.password='password';
+  }
 
   login = new Login('mugeshp', 'Rajmugeshp@8');
+
+onclick()
+{
+  if(this.password==='password'){
+    this.password='text';
+    this.showpassword=true;
+  }
+  else{
+    this.password='password';
+    this.showpassword=false;
+  }
+}
 
   Onlogin(use: NgForm) {
     if (use.value.username === 'admin' && use.value.password == 'Admin@123') {

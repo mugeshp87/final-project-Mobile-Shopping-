@@ -52,3 +52,8 @@ a {
 .formcontainer:hover {
   background-color: rgb(117, 183, 241, 0.8);
 }
+.fa-solid{
+position:absolute;
+bottom:170px;
+right: 80px;
+}

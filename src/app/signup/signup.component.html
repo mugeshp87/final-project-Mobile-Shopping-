@@ -78,14 +78,16 @@
           signupform.get('Email')?.touched
         "
       >
-        Email should have a maximum of 10 characters
+        Email should have a maximum of 20 characters
       </div>
 
       <br />
       <pre></pre>
-      <label>Enter Your Password</label><br />
-      <input type="password" formControlName="Password" />
-      <div
+     
+              <label>Enter Your Password</label><br />
+      <input type="password" formControlName="Password"/>
+      
+          <div
         class="text-danger"
         *ngIf="
           signupform.get('Password')?.hasError('required') &&
