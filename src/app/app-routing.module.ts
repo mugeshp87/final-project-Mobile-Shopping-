@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductsComponent } from './Products/Products.component';
+import { RolebasedAuthGuard } from './rolebased-auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { SuccessComponent } from './success/success.component';
 
@@ -42,8 +43,7 @@ const routes: Routes = [
     path: 'admin',
     title: 'Admin',
     loadChildren: () =>
-      import('./admin/admin.module').then((mod) => mod.AdminModule),
-  canActivate:[AdminGuard]},
+      import('./admin/admin.module').then((mod) => mod.AdminModule),canActivate:[RolebasedAuthGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent },
 ];

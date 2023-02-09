@@ -18,6 +18,7 @@
         [(ngModel)]="login.username"
       />
       <pre></pre>
+      <div class="password">
       <label for="password">Password</label>
       <input
         type="password"
@@ -25,8 +26,10 @@
         required
         name="password"
         [(ngModel)]="login.password"
-      />
+      /><i class="fa-solid fa-eye"></i>
+      <i class="fa-solid fa-eye-slash"></i>
       <pre></pre>
+      </div>
       <button
         type="submit"
         class="btn btn-primary"

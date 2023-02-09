@@ -38,7 +38,5 @@ export class CartService {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
   }
-  updateCartItems(items: number) {
-    this.productList.next(items);
-  }
+  
 }

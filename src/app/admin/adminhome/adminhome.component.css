@@ -4,39 +4,8 @@
 
 h1 {
   padding: 20px;
-  font-family: "Leckerli One", cursive;
+  font-family: "Leckerli One";
   text-align: center;
   font-size: xx-large;
   font-size: 50px;
-}
-ul{
-    font-family: "chivo mono",monospace;
-    display: flex;
-    gap:80px;
-}
-ul li{
-    list-style-type: none;
-    
-}
-ul li a{
-    font-size: 26px;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    padding: 10px;
-    transition: 1s ease;
-    color:coral
-}
-ul:hover li a{
-    color:#1972cb
-}
-ul:hover li a:not(:hover)
-{
-    color: white;
-    opacity: 0.3;
-    filter:blur(10px)
-}
-img{
-    width: 70px;
 }

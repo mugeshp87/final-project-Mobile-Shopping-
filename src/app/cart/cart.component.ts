@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { products } from '../interfaces';
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-cart',
@@ -27,7 +28,7 @@ export class CartComponent implements OnInit {
     this.cart.removeallcart();
   }
   success(data: products) {
-    const user=localStorage.getItem('LoggedInUser')
+   const user=localStorage.getItem('LoggedInUser')
     if(user!=null){
       data.user=user;
       console.log(data)
