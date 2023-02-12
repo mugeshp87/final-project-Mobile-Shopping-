@@ -1,20 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { ToastrService } from 'ngx-toastr';
 
-import { RolebasedAuthGuard } from './rolebased-auth.guard';
+import { RolebasedGuard } from './rolebased.guard';
 
-describe('RolebasedAuthGuard', () => {
-  let guard: RolebasedAuthGuard;
+describe('RolebasedGuard', () => {
+  let guard: RolebasedGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers:[ {
         provide: ToastrService,
-        useValue:ToastrService,
-      },
-    ]
+        useValue: ToastrService,
+      },]
     });
-    guard = TestBed.inject(RolebasedAuthGuard);
+    guard = TestBed.inject(RolebasedGuard);
   });
 
   it('should be created', () => {

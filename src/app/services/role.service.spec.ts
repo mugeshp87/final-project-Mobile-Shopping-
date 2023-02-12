@@ -1,23 +1,20 @@
-import { TestBed } from '@angular/core/testing';
-import { ToastrService } from 'ngx-toastr';
+/* tslint:disable:no-unused-variable */
 
+import { TestBed, async, inject } from '@angular/core/testing';
+import { ToastrService } from 'ngx-toastr';
 import { RoleService } from './role.service';
 
-describe('RoleService', () => {
-  let service: RoleService;
-
+describe('Service: Role', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers:[ {
+      providers: [RoleService, {
         provide: ToastrService,
-        useValue:ToastrService,
-      },
-    ]
+        useValue: ToastrService,
+      },]
     });
-    service = TestBed.inject(RoleService);
   });
 
-  it('should be created', () => {
+  it('should ...', inject([RoleService], (service: RoleService) => {
     expect(service).toBeTruthy();
-  });
+  }));
 });

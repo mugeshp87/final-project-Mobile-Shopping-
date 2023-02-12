@@ -11,6 +11,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormBuilder } from '@angular/forms';
 
 describe('ViewproductsComponent', () => {
   let component: ViewproductsComponent;
@@ -32,6 +33,7 @@ describe('ViewproductsComponent', () => {
         MatFormField,
         MatPaginator,
         MatTableDataSource,
+        FormBuilder
       ],
       imports: [
         MatDialogModule,

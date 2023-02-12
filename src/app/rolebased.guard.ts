@@ -7,16 +7,13 @@ import {
 } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { AuthguardService } from './authguard.service';
+import { RoleService } from './services/role.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
-  constructor(
-    private authservice: AuthguardService,
-    private toastr: ToastrService
-  ) {}
+export class RolebasedGuard implements CanActivate {
+  constructor(private toastr: ToastrService,private service:RoleService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,15 +22,15 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      const user=localStorage.getItem('LoggedInUser')
-      if(user!=null){
-        return true;
-      }
-      else{
-        this.toastr.warning(
-          'You need to login to proceed,Kindly go and login!!!!'
-        )
-        return false;
-        }
+      const ls=localStorage.getItem('LoggedInUser')||localStorage.getItem('LoggedInAdmin')
+   if(ls!==null)
+   {
+    this.service.isadmin();
+    return true;
+   }
+   else{
+    return false
+   }
+      
   }
 }

@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
   addtocart(item: any) {
     
-    this.toastr.success('Product Added To The Cart Successfully!!');
+    this.toastr.success("Product Added To The Cart Successfully!!")
     this.cart.addtocart(item);
   }
   getneo() {
@@ -72,4 +72,5 @@ export class ProductsComponent implements OnInit {
       }
     );
   }
+  
 }
