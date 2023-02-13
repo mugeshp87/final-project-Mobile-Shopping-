@@ -15,7 +15,7 @@
         <a routerLink="products">Products</a>
       </ul>
       <ul>
-        <a routerLink="admin/home">Admin</a>
+        <a (click)="role.isadmin()">Admin</a>
       </ul>
 
       <ul *ngIf="hideuserurl">
@@ -57,6 +57,9 @@
       <ul>
         <a routerLink="products">Products</a>
       </ul>
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+      </div>
       <ul>
         <a routerLink="admin/home/view">View Products</a>
       </ul>

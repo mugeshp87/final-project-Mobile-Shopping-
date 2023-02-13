@@ -25,10 +25,11 @@ a:hover {
   padding: 5px;
 }
 li a {
-  font-family: "Leckerli One", cursive;
+  font-family: "Leckerli One";
   font-weight: bold;
 }
 .fas {
   position: absolute;
   top: 40px;
 }
+

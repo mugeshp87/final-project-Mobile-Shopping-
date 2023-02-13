@@ -19,8 +19,9 @@ isadmin() {
       this.route.navigate(['admin/home']);
     } else {
       this.toastr.warning(
-        'Unauthorized!You are not allowed to goo this page'
+        'Unauthorized!You are not allowed to navigate this page'
       );
+      this.route.navigate(['/home'])
     }
   } else {
     this.toastr.warning('Log in first');

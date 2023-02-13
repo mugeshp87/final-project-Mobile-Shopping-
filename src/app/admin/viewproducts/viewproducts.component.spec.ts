@@ -30,7 +30,6 @@ describe('ViewproductsComponent', () => {
         },
         MatToolbar,
         MatIcon,
-        MatFormField,
         MatPaginator,
         MatTableDataSource,
         FormBuilder
