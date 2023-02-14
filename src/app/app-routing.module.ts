@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'cart',
     title: 'Cart',
     component: CartComponent,
-    canActivate: [AuthGuard],
+    canActivate: [],
   },
   {
     path: 'success',

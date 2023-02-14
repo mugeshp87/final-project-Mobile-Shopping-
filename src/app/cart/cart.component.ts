@@ -40,6 +40,14 @@ export class CartComponent implements OnInit {
     }
 
   }
+  increaseproduct(item: any)
+  {
+   console.log(item.Variant)
+  }
+  decreaseproduct(item: any)
+  {
+
+  }
 
 
 }

@@ -19,13 +19,13 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.product.getproducts().subscribe((data) => {
       this.value = data;
+      console.log(data)
       this.value.forEach((a: products) => {
         Object.assign(a, { quantity: 1, total: a.Price });
       });
     });
   }
   addtocart(item: any) {
-    
     this.toastr.success("Product Added To The Cart Successfully!!")
     this.cart.addtocart(item);
   }

@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      const user=localStorage.getItem('LoggedInUser')
+      const user=localStorage.getItem('LoggedInUser'||'LoggedInAdmin')
       if(user!=null){
         return true;
       }
