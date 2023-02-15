@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, find } from 'rxjs';
 import { products } from '../interfaces';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class CartService {
     return this.productList.asObservable();
   }
   addtocart(product: products) {
+    let setvalues=new Set(this.cartItemList)
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
@@ -20,8 +21,10 @@ export class CartService {
   }
   getTotalPrice(): number {
     let alltotal = 0;
+    let quantity
     this.cartItemList.map((a: products) => {
-      alltotal = alltotal + a.total;
+      quantity=a.quantity;
+      alltotal = alltotal + a.total*quantity;
     });
     return alltotal;
   }

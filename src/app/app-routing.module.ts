@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { LoginaccessGuard } from './loginaccess.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductsComponent } from './Products/Products.component';
 import { RolebasedGuard } from './rolebased.guard';
@@ -20,7 +21,7 @@ const routes: Routes = [
     title: 'Products',
     component: ProductsComponent,
   },
-  { path: 'login', title: 'Login', component: LoginComponent },
+  { path: 'login', title: 'Login', component: LoginComponent,canActivate:[LoginaccessGuard]},
   { path: 'Signup', title: 'Signup', component: SignupComponent },
   {
     path: 'aboutus',
