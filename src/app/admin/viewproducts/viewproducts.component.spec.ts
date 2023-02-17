@@ -29,6 +29,7 @@ describe('ViewproductsComponent', () => {
           useValue: ToastrService,
         },
         MatToolbar,
+        MatFormField,
         MatIcon,
         MatPaginator,
         MatTableDataSource,

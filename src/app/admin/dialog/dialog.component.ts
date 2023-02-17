@@ -28,7 +28,6 @@ export class DialogComponent implements OnInit {
       Image: ['', Validators.required],
       Variant: ['', Validators.required],
     });
-    console.log(this.editdata);
     if (this.editdata) {
       this.actionbutton = 'Update';
       this.productform.controls['id'].setValue(this.editdata.id);

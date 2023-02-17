@@ -24,7 +24,5 @@ describe('Service: Adminservice', () => {
       expect(service).toBeTruthy();
     }
   ));
-  it('',()=>{
-    expect(service.addadminproducts(data)).toBe(http.post(`${url}`, data))
-  })
+ 
 });

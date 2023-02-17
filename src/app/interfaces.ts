@@ -6,7 +6,7 @@ export interface products{
     Variant:String;
     quantity:number;
     total:number;
-    user:any;
+    user:string;
     password:String;
     
 }

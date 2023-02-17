@@ -16,7 +16,6 @@ export class AdminserviceService {
   }
   deleteadminproducts(data: any) {
     return this.http.delete(`${this.url}/${data}`);
-    console.log(data);
   }
   updateadminproducts(data: any, newdata: any) {
     return this.http.put(`${this.url}/${data}`, newdata);

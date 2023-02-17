@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { ToastrService } from 'ngx-toastr';
 
 import { LoginaccessGuard } from './loginaccess.guard';
 
@@ -6,7 +7,12 @@ describe('LoginaccessGuard', () => {
   let guard: LoginaccessGuard;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers:[ {
+        provide: ToastrService,
+        useValue: ToastrService,
+      },]
+    });
     guard = TestBed.inject(LoginaccessGuard);
   });
 

@@ -13,11 +13,9 @@ export class CartService {
     return this.productList.asObservable();
   }
   addtocart(product: products) {
-    let setvalues=new Set(this.cartItemList)
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList);
   }
   getTotalPrice(): number {
     let alltotal = 0;
@@ -40,6 +38,11 @@ export class CartService {
   removeallcart() {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
+  }
+  getcartitems()
+  {
+    let values=localStorage.getItem('CartItems')
+    this.productList.next(values)
   }
   
 }

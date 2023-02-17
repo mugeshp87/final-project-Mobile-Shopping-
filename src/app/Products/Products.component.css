@@ -10,7 +10,7 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
-button {
+.addtocartbutton{
   background-color: rgb(204, 33, 127);
   color: white;
   font-weight: bold;

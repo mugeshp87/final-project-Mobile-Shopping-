@@ -2,29 +2,47 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { products } from '../interfaces';
-import jwtDecode from 'jwt-decode';
+import jwt_decode from 'jwt-decode'
 import { ToastrService } from 'ngx-toastr';
+import { ProductsserviceService } from '../services/productsservice.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent implements OnInit{
+export class CartComponent implements OnInit , OnChanges{
   public product: any = [];
   public grandtotal: number = 0;
   data: any;
+  public decodeuser:any
+  public uniquecart: any;
   constructor(
     private cart: CartService,
     private route: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private productservice:ProductsserviceService
   ) {}
-  ngOnInit() {
-    this.cart.getProducts().subscribe((res) => {
-      this.product = res;
-      this.grandtotal = this.cart.getTotalPrice();
-      // this.ngOnChanges()
-    });
+  ngOnChanges(): void {
+   this.ngOnInit(); 
+  }
+  ngOnInit(){
+      this.cart.getProducts().subscribe((res) => {
+        this.product = res;
+        this.grandtotal = this.cart.getTotalPrice();
+        const a=JSON.parse(localStorage.getItem('CartItems')as any)
+        this.uniquecart=a;
+        this.uniquecart = this.product.filter(
+          (item: { id: any }, index: any, self: any[]) => {
+            return index === self.findIndex((t: { id: any }) => t.id === item.id);
+          }
+          
+        );
+      });
+      
+    
+
+
   }
   removeitemcart(item: any) {
     this.cart.removeitemcart(item);
@@ -32,12 +50,21 @@ export class CartComponent implements OnInit{
   deletecart() {
     this.cart.removeallcart();
   }
-  success(data: products) {
+  success(data: any) {
     const user = localStorage.getItem('LoggedInUser');
     if (user != null) {
-      data.user = user;
-      console.log(data);
+      console.table(data)
+      this.decodeuser = jwt_decode(user);
+      data.map((element:any)=>{
+       element.total=element.quantity*element.Price;
+       element.user=this.decodeuser.Username
+       delete element.id;
+       return element
+      })
+      console.table(data)
       this.route.navigate(['success']);
+      console.log(data)
+      this.productservice.orderedproducts(data).subscribe();
       setTimeout(() => {
         this.route.navigate(['home']);
         this.cart.removeallcart();
@@ -45,7 +72,6 @@ export class CartComponent implements OnInit{
     }
   }
   increaseproduct(item: any) {
-    console.log(item.quantity);
     if (item.quantity >= 1) {
       item.quantity++;
     }
@@ -55,11 +81,9 @@ export class CartComponent implements OnInit{
     }
     this.cart.getTotalPrice();
     this.ngOnInit();
-    console.log(this.cart.getTotalPrice());
   }
 
   decreaseproduct(item: any) {
-    console.log(item.quantity);
     if (item.quantity > 1) item.quantity--;
     else {
       this.toastr.show('Product Removed From Cart');
@@ -67,8 +91,5 @@ export class CartComponent implements OnInit{
     }
     this.cart.getTotalPrice();
     this.ngOnInit();
-    console.log(this.cart.getTotalPrice)
-
   }
-  
 }

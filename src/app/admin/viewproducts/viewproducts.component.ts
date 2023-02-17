@@ -78,7 +78,6 @@ export class ViewproductsComponent implements OnInit, OnChanges {
       next: (res) => {
         this.productvalue = res;
         this.dataSource = new MatTableDataSource(this.productvalue);
-        console.log(this.productvalue);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },

@@ -33,8 +33,10 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.toastr.success('Loggedout Successfully')
     this.route.navigate(['/home']);
     localStorage.clear();
     this.hideuserurl = true;
+  
   }
 }

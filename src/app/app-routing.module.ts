@@ -45,7 +45,7 @@ const routes: Routes = [
     path: 'admin',
     title: 'Admin',
     loadChildren: () =>
-      import('./admin/admin.module').then((mod) => mod.AdminModule),canActivate:[AdminGuard]},
+      import('./admin/admin.module').then((mod) => mod.AdminModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent },
 ];

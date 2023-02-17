@@ -6,9 +6,9 @@ const routes: Routes = [
   {
     path: 'home',
     title: 'Admin',
-    component: AdminhomeComponent,
+    component: AdminhomeComponent,canActivate:[AdminGuard],
     children: [
-      { path: 'view', title: 'View', component: ViewproductsComponent , canActivate:[AdminGuard] },
+      { path: 'view', title: 'View', component: ViewproductsComponent , canActivate:[AdminGuard]},
     ],
   },
 ];
