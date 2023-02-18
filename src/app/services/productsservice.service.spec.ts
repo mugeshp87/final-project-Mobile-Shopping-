@@ -16,12 +16,7 @@ describe('Service: Productsservice', () => {
     service = TestBed.inject(ProductsserviceService);
     httpMock = TestBed.inject(HttpTestingController);
   });
-  // beforeEach(() => {
-  //   TestBed.configureTestingModule({
-  //     imports: [ HttpClientTestingModule ],
-  //     providers: [ MyService ]
-  //   });
-
+  
   afterEach(() => {
     httpMock.verify();
   });
