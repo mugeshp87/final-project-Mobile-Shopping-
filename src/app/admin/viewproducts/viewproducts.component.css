@@ -1,67 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inika:regular,700);
 @import url(https://fonts.googleapis.com/css?family=Black+Han+Sans:regular);
-/* p{
-font-family:'Black Han Sans';
-}
-tr,td{
-    
-    padding: 20px;
-    margin: 20px;
-    border: 5px solid rgb(1, 10, 14);
-}
-.table-head{
-    font-weight: bolder;
-    color:rgb(68, 75, 184)
-}
-table{
-    border: 2px solid ;
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-}
-img{
-    max-width: 150px;
-    max-height: 300px;
-}
-table {
-    width: 98%;
-  }
-button{
-    margin: 10px;
-}
-.btnone{
-    background-color: forestgreen;
-    padding: 10px;
-    width: 100px;
-}
-.btntwo{
-    background-color: rgb(240, 18, 18);
-    padding: 10px;
-    width: 100px;
-    color:white
-}
-.body{
-    animation:changebg 30s infinite alternate linear
-}
-  @keyframes changebg{
-    0%{
-      background: rgb(118, 175, 232);
-    }
-    25%{
-      background: #c6574f;
-    }
-    50%{
-      background: #48d976;
-    }
-    75%
-    {
-      background: #ffd97d;
-    }
-    100%
-    {
-      background:whitesmoke;
-    }
-  } */
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -81,7 +19,3 @@ td,
 th {
   padding: 20px;
 }
-/* .contain{
-  max-width: 1200px;
-  margin: 0 auto ;
-} */

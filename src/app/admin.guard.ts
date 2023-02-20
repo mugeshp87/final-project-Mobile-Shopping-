@@ -17,8 +17,7 @@ export class AdminGuard implements CanActivate {
     }
     else{
       this.toastr.warning(
-        'You need to login to proceed,Kindly go and login!!!!'
-      )
+        'You need to login to proceed,Kindly go and login!!!!')
       return false;
     }
   }

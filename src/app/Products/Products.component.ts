@@ -29,51 +29,58 @@ export class ProductsComponent implements OnInit {
     this.toastr.success('Product Added To The Cart Successfully!!');
     this.cart.addtocart(item);
     console.log(item);
-    let cartitems = localStorage.getItem('CartItems');
-    if (cartitems == null) {
-      let getstoredata: any = [];
-      getstoredata.push(item);
-      localStorage.setItem('CartItems', JSON.stringify(getstoredata));
-    } else {
-      var id = item.id;
-      let index: number = -1;
-      this.itemcart = JSON.parse(localStorage.getItem('CartItems') as any);
-      for (let i = 0; i < this.itemcart.length; i++) {
-        if (parseInt(id) === parseInt(this.itemcart[i].id)) {
-          this.itemcart[i].qnt = item.quantity;
-          index = i;
-          break;
-        }
-      }
-      if (index == -1) {
-        this.itemcart.push(item);
-        localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-      } else {
-        localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-      }
+    // let cartitems = localStorage.getItem('CartItems');
+    // if (cartitems == null) {
+    //   let getstoredata: any = [];
+    //   getstoredata.push(item);
+    //   localStorage.setItem('CartItems', JSON.stringify(getstoredata));
+    // } else {
+    //   var id = item.id;
+    //   let index: number = -1;
+    //   this.itemcart = JSON.parse(localStorage.getItem('CartItems') as any);
+    //   for (let i = 0; i < this.itemcart.length; i++) {
+    //     if (parseInt(id) === parseInt(this.itemcart[i].id)) {
+    //       this.itemcart[i].qnt = item.quantity;
+    //       index = i;
+    //       break;
+    //     }
+    //   }
+    //   if (index == -1) {
+    //     this.itemcart.push(item);
+    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
+    //   } else {
+    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
+    //   }
+    // let cartitems = localStorage.getItem('CartItems');
+    // if (cartitems == null) {
+    //   let getstoredata: any = [];
+    //   getstoredata.push(item);
+    //   localStorage.setItem('CartItems', JSON.stringify(getstoredata));
+    // } else {
+    //   var id = item.id;
+    //   let index: number = -1;
+    //   this.itemcart = JSON.parse(localStorage.getItem('CartItems') as any);
+    //   console.log(this.itemcart)
+    //   for (let i = 0; i < this.itemcart.length; i++) {
+    //   console.log(this.itemcart.length)
+    //     if (parseInt(id) === parseInt(this.itemcart[i].id)) {
+    //       this.itemcart[i].quantity = item.quantity;
+    //    console.log(this.itemcart.quantity)
+    //    console.log(item.quantity)
+    //       index = i;
+    //       break;
+    //     }
+    //   }
+    //   if (index == -1) {
+    //     this.itemcart.push(item);
+    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
+    //   } else {
+    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
+    //   }
+    // }
+  
     }
-    
-  }
-  increaseproduct(mobile: any) {
-    console.log(mobile);
-    if (mobile.quantity >= 1) {
-      mobile.quantity++;
-    }
-    if (mobile.quantity > 5) {
-      this.toastr.info('You Can Add Upto 5 Units Only');
-      mobile.quantity = 5;
-    }
-    this.cart.getTotalPrice();
-  }
-
-  decreaseproduct(mobile: any) {
-    if (mobile.quantity > 1) mobile.quantity--;
-    else {
-      this.toastr.info('Minium Quantity Should Be One');
-      mobile.quantity = 1;
-    }
-    this.cart.getTotalPrice();
-  }
+   
   getneo() {
     this.product.getproducts().subscribe((res: any) => {
       this.value = res.filter((neo: { Name: String }) => {

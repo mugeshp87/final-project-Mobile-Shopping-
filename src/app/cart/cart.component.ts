@@ -30,8 +30,6 @@ export class CartComponent implements OnInit , OnChanges{
       this.cart.getProducts().subscribe((res) => {
         this.product = res;
         this.grandtotal = this.cart.getTotalPrice();
-        const a=JSON.parse(localStorage.getItem('CartItems')as any)
-        this.uniquecart=a;
         this.uniquecart = this.product.filter(
           (item: { id: any }, index: any, self: any[]) => {
             return index === self.findIndex((t: { id: any }) => t.id === item.id);
