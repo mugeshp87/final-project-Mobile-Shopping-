@@ -28,7 +28,6 @@ export class ProductsComponent implements OnInit {
   addtocart(item: any) {
     this.toastr.success('Product Added To The Cart Successfully!!');
     this.cart.addtocart(item);
-    console.log(item);
     // let cartitems = localStorage.getItem('CartItems');
     // if (cartitems == null) {
     //   let getstoredata: any = [];
@@ -84,7 +83,6 @@ export class ProductsComponent implements OnInit {
   getneo() {
     this.product.getproducts().subscribe((res: any) => {
       this.value = res.filter((neo: { Name: String }) => {
-        console.log('heyyy');
         return neo.Name.includes('Neo');
       });
       this.value.forEach((a: products) => {

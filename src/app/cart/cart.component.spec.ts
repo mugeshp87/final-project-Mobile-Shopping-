@@ -32,7 +32,6 @@ describe('CartComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
   it('', () => {
     component.removeitemcart(item);
   });
@@ -42,4 +41,9 @@ describe('CartComponent', () => {
   it('', () => {
     component.success(data);
   });
+  it('',()=>{
+    spyOn(component,'ngOnInit')
+    component.ngOnChanges();
+    expect(component.ngOnChanges).toHaveBeenCalled()
+  }) 
 });

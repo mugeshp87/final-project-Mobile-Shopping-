@@ -34,4 +34,7 @@ describe('SignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("resetform",()=>{
+    component.resetform()
+  })
 });

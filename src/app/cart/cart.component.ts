@@ -51,7 +51,6 @@ export class CartComponent implements OnInit , OnChanges{
   success(data: any) {
     const user = localStorage.getItem('LoggedInUser');
     if (user != null) {
-      console.table(data)
       this.decodeuser = jwt_decode(user);
       data.map((element:any)=>{
        element.total=element.quantity*element.Price;
@@ -59,9 +58,7 @@ export class CartComponent implements OnInit , OnChanges{
        delete element.id;
        return element
       })
-      console.table(data)
       this.route.navigate(['success']);
-      console.log(data)
       this.productservice.orderedproducts(data).subscribe();
       setTimeout(() => {
         this.route.navigate(['home']);

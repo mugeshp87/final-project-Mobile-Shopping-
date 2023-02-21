@@ -13,10 +13,8 @@ import { RoleService } from './services/role.service';
   providedIn: 'root',
 })
 export class RolebasedGuard implements CanActivate {
-  constructor(private toastr: ToastrService,private service:RoleService) {}
+  constructor(private toastr: ToastrService,public service:RoleService) {}
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>

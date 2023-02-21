@@ -17,4 +17,5 @@ describe('Service: Role', () => {
   it('should ...', inject([RoleService], (service: RoleService) => {
     expect(service).toBeTruthy();
   }));
+
 });

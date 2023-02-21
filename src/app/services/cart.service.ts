@@ -39,10 +39,5 @@ export class CartService {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
   }
-  getcartitems()
-  {
-    let values=localStorage.getItem('CartItems')
-    this.productList.next(values)
-  }
   
 }

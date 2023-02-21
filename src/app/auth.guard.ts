@@ -15,17 +15,15 @@ import { AuthguardService } from './authguard.service';
 export class AuthGuard implements CanActivate {
   constructor(
     private authservice: AuthguardService,
-    private toastr: ToastrService
+    public toastr: ToastrService
   ) {}
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      const user=localStorage.getItem('LoggedInUser'||'LoggedInAdmin')
+      const user=localStorage.getItem('LoggedInUser')
       if(user!=null){
         return true;
       }
