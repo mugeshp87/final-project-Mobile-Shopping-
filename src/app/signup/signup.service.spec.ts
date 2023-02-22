@@ -2,11 +2,18 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed, async, inject } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { of } from 'rxjs';
+import { SignupComponent } from './signup.component';
 import { SignupService } from './signup.service';
 
 describe('Service: Signup', () => {
+  let component:SignupComponent
   let service :SignupService;
   let httpTestingController: HttpTestingController;
+  let toastr:ToastrService;
+  let router:Router;
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [SignupService, HttpClient, HttpHandler],
@@ -77,4 +84,6 @@ describe('getusers', () => {
     const req = httpTestingController.expectOne('http://localhost:3000/users');
     req.flush(mockUsers);
   });
+  
 });
+

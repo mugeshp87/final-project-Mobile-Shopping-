@@ -7,6 +7,7 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
+import { of } from 'rxjs';
 describe('Service: Productsservice', () => {
   let service: ProductsserviceService;
   let httpMock: HttpTestingController;
@@ -74,29 +75,30 @@ describe('Service: Productsservice', () => {
       );
       req.flush(mockProducts);
     });
+  });
+});
+describe('orderedproducts()', () => {
+  let httpClientSpy: { post: jasmine.Spy };
+  let service: ProductsserviceService;
 
-    it('should send a POST request to the correct URL with the provided data', () => {
-      const expectedUrl = 'http://localhost:3000/OrderDetails';
-      const postData = { product: 'Example product', quantity: 1 };
+  beforeEach(() => {
+    // Create a spy for the HttpClient post method
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
 
-      service.orderedproducts(postData).subscribe((response) => {
-        expect(response).toBeTruthy();
-      });
+    // Create a new instance of YourService using the HttpClient spy
+    service = new ProductsserviceService(httpClientSpy as any);
+  });
 
-      const req = httpTestingController.expectOne(expectedUrl);
-      expect(req.request.method).toEqual('POST');
-      // expect(req.request.body).toEqual(postData);
+  it('should call the http.post method with the correct URL and data', () => {
+    const mockData = { productId: 123, quantity: 2 };
+    const expectedUrl = 'http://localhost:3000/OrderDetails';
+    httpClientSpy.post.and.returnValue(of(mockData));
 
-      // req.flush({ status: 'success' });
+    service.orderedproducts(mockData).subscribe(data => {
+      expect(data).toEqual(mockData);
     });
-    it('should return an Observable<User[]>', () => {
-      const postData = { product: 'Example product', quantity: 1 };
-      service.orderedproducts(postData).subscribe((users:any) => {
-        expect(users).toEqual(postData);
-      });
-  
-      const req = httpTestingController.expectOne('http://localhost:3000/OrderDetails');
-      req.flush(postData);
-    });
+
+    expect(httpClientSpy.post.calls.count()).toBe(1, 'http.post called once');
+    expect(httpClientSpy.post.calls.argsFor(0)).toEqual([expectedUrl, mockData], 'correct URL and data passed to http.post');
   });
 });

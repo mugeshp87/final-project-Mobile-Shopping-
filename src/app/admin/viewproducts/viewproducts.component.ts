@@ -29,8 +29,8 @@ export class ViewproductsComponent implements OnInit, OnChanges {
   id: any;
 
   constructor(
-    private service: AdminserviceService,
-    private toastr: ToastrService,
+    public service: AdminserviceService,
+    public toastr: ToastrService,
     private dialog: MatDialog
   ) {}
 

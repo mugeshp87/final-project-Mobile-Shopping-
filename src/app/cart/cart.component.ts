@@ -18,9 +18,9 @@ export class CartComponent implements OnInit , OnChanges{
   public decodeuser:any
   public uniquecart: any;
   constructor(
-    private cart: CartService,
-    private route: Router,
-    private toastr: ToastrService,
+    public cart: CartService,
+    public route: Router,
+    public toastr: ToastrService,
     private productservice:ProductsserviceService
   ) {}
   ngOnChanges(): void {

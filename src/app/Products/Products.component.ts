@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
   public value: any;
   constructor(
     private product: ProductsserviceService,
-    private cart: CartService,
+    public cart: CartService,
     private toastr: ToastrService
   ) {}
 
@@ -24,60 +24,10 @@ export class ProductsComponent implements OnInit {
       });
     });
   }
-  itemcart: any = [];
+
   addtocart(item: any) {
     this.toastr.success('Product Added To The Cart Successfully!!');
     this.cart.addtocart(item);
-    // let cartitems = localStorage.getItem('CartItems');
-    // if (cartitems == null) {
-    //   let getstoredata: any = [];
-    //   getstoredata.push(item);
-    //   localStorage.setItem('CartItems', JSON.stringify(getstoredata));
-    // } else {
-    //   var id = item.id;
-    //   let index: number = -1;
-    //   this.itemcart = JSON.parse(localStorage.getItem('CartItems') as any);
-    //   for (let i = 0; i < this.itemcart.length; i++) {
-    //     if (parseInt(id) === parseInt(this.itemcart[i].id)) {
-    //       this.itemcart[i].qnt = item.quantity;
-    //       index = i;
-    //       break;
-    //     }
-    //   }
-    //   if (index == -1) {
-    //     this.itemcart.push(item);
-    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-    //   } else {
-    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-    //   }
-    // let cartitems = localStorage.getItem('CartItems');
-    // if (cartitems == null) {
-    //   let getstoredata: any = [];
-    //   getstoredata.push(item);
-    //   localStorage.setItem('CartItems', JSON.stringify(getstoredata));
-    // } else {
-    //   var id = item.id;
-    //   let index: number = -1;
-    //   this.itemcart = JSON.parse(localStorage.getItem('CartItems') as any);
-    //   console.log(this.itemcart)
-    //   for (let i = 0; i < this.itemcart.length; i++) {
-    //   console.log(this.itemcart.length)
-    //     if (parseInt(id) === parseInt(this.itemcart[i].id)) {
-    //       this.itemcart[i].quantity = item.quantity;
-    //    console.log(this.itemcart.quantity)
-    //    console.log(item.quantity)
-    //       index = i;
-    //       break;
-    //     }
-    //   }
-    //   if (index == -1) {
-    //     this.itemcart.push(item);
-    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-    //   } else {
-    //     localStorage.setItem('CartItems', JSON.stringify(this.itemcart));
-    //   }
-    // }
-  
     }
    
   getneo() {

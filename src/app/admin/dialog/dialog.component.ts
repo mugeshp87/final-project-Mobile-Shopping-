@@ -15,10 +15,10 @@ export class DialogComponent implements OnInit {
   product: any;
   constructor(
     private formbuilder: FormBuilder,
-    private apicall: AdminserviceService,
-    private toaster: ToastrService,
+    public apicall: AdminserviceService,
+    public toaster: ToastrService,
     @Inject(MAT_DIALOG_DATA) public editdata: any,
-    private dialogref: MatDialogRef<DialogComponent>
+    public dialogref: MatDialogRef<DialogComponent>
   ) {}
   ngOnInit() {
     this.productform = this.formbuilder.group({

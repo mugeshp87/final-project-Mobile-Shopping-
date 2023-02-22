@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
   password:any;
   showpassword=false;
   constructor(
-    private ser: SignupService,
-    private router: Router,
-    private http: HttpClient,
+    public ser: SignupService,
+    public router: Router,
+    public http: HttpClient,
     private auth: AuthguardService,
     private toastr: ToastrService
   ) {}
