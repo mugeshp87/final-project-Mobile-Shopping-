@@ -97,8 +97,9 @@ export class ViewproductsComponent implements OnInit, OnChanges {
   deleteproduct(id: number) {
     this.service.deleteproduct(id).subscribe((res) => {
       this.toastr.success('Product Deleted Successfully');
+      this.getproducts();
     });
-    this.getproducts();
+  
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -8,7 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { SignupService } from './signup.service';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

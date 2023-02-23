@@ -28,32 +28,39 @@ export class ProductsComponent implements OnInit {
   addtocart(item: any) {
     this.toastr.success('Product Added To The Cart Successfully!!');
     this.cart.addtocart(item);
-    }
-   
-  getneo() {
-    this.product.getproducts().subscribe((res: any) => {
-      this.value = res.filter((neo: { Name: String }) => {
-        return neo.Name.includes('Neo');
-      });
-      this.value.forEach((a: products) => {
-        Object.assign(a, { quantity: 1, total: a.Price });
-      });
-    });
   }
-  geteleven() {
+
+  getneo() {
     this.product.getproducts().subscribe(
       (res: any) => {
-        this.value = res.filter((eleven: { Name: String }) => {
-          return eleven.Name.includes('11');
-        });
-        this.value.forEach((a: products) => {
-          Object.assign(a, { quantity: 1, total: a.Price });
+        this.value = res.filter((neo: { Name: String }) => {
+          return neo.Name.includes('Neo');
         });
       },
       (error) => {
         this.toastr.error('Error Occurs');
       }
     );
+    this.value.forEach((a: products) => {
+      Object.assign(a, { quantity: 1, total: a.Price });
+    
+  });
+}
+  geteleven() {
+    this.product.getproducts().subscribe(
+      (res: any) => {
+        this.value = res.filter((eleven: { Name: String }) => {
+          return eleven.Name.includes('11');
+        });
+      },
+      (error) => {
+        this.toastr.error('Error Occurs');
+      }
+    );
+    this.value.forEach((a: products) => {
+      Object.assign(a, { quantity: 1, total: a.Price });
+    });
+    
   }
   getzseries() {
     this.product.getproducts().subscribe(
