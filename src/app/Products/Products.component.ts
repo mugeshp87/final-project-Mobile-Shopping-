@@ -10,6 +10,7 @@ import { products } from '../interfaces';
 })
 export class ProductsComponent implements OnInit {
   public value: any;
+  dataSource: any;
   constructor(
     private product: ProductsserviceService,
     public cart: CartService,

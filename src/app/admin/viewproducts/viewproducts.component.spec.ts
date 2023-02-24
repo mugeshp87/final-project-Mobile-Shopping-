@@ -14,8 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormBuilder } from '@angular/forms';
 import { AdminserviceService } from 'src/app/services/adminservice.service';
 import { of } from 'rxjs';
-import { MatSort } from '@angular/material/sort';
-import { By } from '@angular/platform-browser';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+import { MatSortModule } from '@angular/material/sort';
 
 describe('ViewproductsComponent', () => {
   let component: ViewproductsComponent;
@@ -23,7 +26,9 @@ describe('ViewproductsComponent', () => {
   let row: any;
   let dialog: jasmine.SpyObj<MatDialog>;
   let event: Event;
-  let id: any;
+  let id: number;
+  let data: any;
+  let service: AdminserviceService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ViewproductsComponent],
@@ -105,5 +110,88 @@ describe('ViewproductsComponent', () => {
     component.openDialog();
     expect(dialog.open).toHaveBeenCalled();
     expect(component.getproducts).not.toHaveBeenCalled();
+  });
+  it('should', () => {
+    expect(component.editproduct(data)).toHaveBeenCalled;
+  });
+  it('should', () => {
+    expect(component.applyFilter(data)).toHaveBeenCalled();
+  });
+  it('should delete a product and display success message', () => {
+    // Arrange
+    const id = 1;
+    const service = TestBed.inject(AdminserviceService);
+    spyOn(service, 'deleteproduct').and.returnValue(of({}));
+    const toastr = TestBed.inject(ToastrService);
+    spyOn(toastr, 'success');
+    const component = TestBed.createComponent(
+      ViewproductsComponent
+    ).componentInstance;
+
+    // Act
+    component.deleteproduct(id);
+
+    // Assert
+    expect(service.deleteproduct).toHaveBeenCalledWith(id);
+    expect(toastr.success).toHaveBeenCalledWith('Product Deleted Successfully');
+  });
+});
+describe('ViewProductsComponent', () => {
+  let component: ViewproductsComponent;
+  let fixture: ComponentFixture<ViewproductsComponent>;
+  let service: AdminserviceService;
+  let httpMock: HttpTestingController;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ViewproductsComponent],
+      imports: [
+        HttpClientTestingModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+      ],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ViewproductsComponent);
+    component = fixture.componentInstance;
+    service = TestBed.inject(AdminserviceService);
+    httpMock = TestBed.inject(HttpTestingController);
+  });
+
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('should fetch admin products and set up data source', () => {
+    const products = [
+      { id: 1, name: 'Product 1' },
+      { id: 2, name: 'Product 2' },
+    ];
+    spyOn(service, 'getadminproducts').and.returnValue(of(products));
+    fixture.detectChanges();
+
+    expect(component.productvalue).toEqual(products);
+    expect(component.dataSource.data).toEqual(products);
+    expect(component.dataSource.paginator).toBeDefined();
+    expect(component.dataSource.sort).toBeDefined();
+    expect(component.dataSource.paginator).toEqual(component.paginator);
+    expect(component.dataSource.sort).toEqual(component.sort);
+  });
+
+  it('should call getadminproducts method of service', () => {
+    const products = [
+      { id: 1, name: 'Product 1' },
+      { id: 2, name: 'Product 2' },
+    ];
+    service.getadminproducts().subscribe((res) => {
+      expect(res).toEqual(products);
+    });
+
+    const req = httpMock.expectOne('/api/admin/products');
+    expect(req.request.method).toBe('GET');
+    req.flush(products);
   });
 });

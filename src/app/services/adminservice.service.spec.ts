@@ -1,11 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
-import { TestBed, async, inject } from '@angular/core/testing';
+
+import { TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { AdminserviceService } from './adminservice.service';
@@ -36,9 +33,8 @@ describe('addadminproducts()', () => {
   let service: AdminserviceService;
   let router: Router;
   beforeEach(() => {
-    // Create a spy for the HttpClient post method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
-    // Create a new instance of YourService using the HttpClient spy
+
     service = new AdminserviceService(httpClientSpy as any, router);
   });
 
@@ -64,10 +60,8 @@ describe('deleteadminproducts()', () => {
   let router: Router;
 
   beforeEach(() => {
-    // Create a spy for the HttpClient delete method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['delete']);
 
-    // Create a new instance of YourService using the HttpClient spy
     service = new AdminserviceService(httpClientSpy as any, router);
   });
 
@@ -96,10 +90,8 @@ describe('updateadminproducts()', () => {
   let router: Router;
 
   beforeEach(() => {
-    // Create a spy for the HttpClient put method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['put']);
 
-    // Create a new instance of YourService using the HttpClient spy
     service = new AdminserviceService(httpClientSpy as any, router);
   });
 
@@ -126,13 +118,10 @@ describe('editproduct()', () => {
   let service: AdminserviceService;
 
   beforeEach(() => {
-    // Create a spy for the HttpClient get method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
 
-    // Create a spy for the Router navigate method
     routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
-    // Create a new instance of YourService using the HttpClient and Router spies
     service = new AdminserviceService(httpClientSpy as any, routerSpy as any);
   });
 
@@ -165,10 +154,8 @@ describe('updateproduct()', () => {
   let router: Router;
 
   beforeEach(() => {
-    // Create a spy for the HttpClient put method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['put']);
 
-    // Create a new instance of YourService using the HttpClient spy
     service = new AdminserviceService(httpClientSpy as any, router);
   });
 
@@ -190,14 +177,12 @@ describe('updateproduct()', () => {
 describe('deleteproduct()', () => {
   let httpClientSpy: { delete: jasmine.Spy };
   let service: AdminserviceService;
-  let router:Router;
+  let router: Router;
 
   beforeEach(() => {
-    // Create a spy for the HttpClient delete method
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['delete']);
 
-    // Create a new instance of YourService using the HttpClient spy
-    service = new AdminserviceService(httpClientSpy as any,router);
+    service = new AdminserviceService(httpClientSpy as any, router);
   });
 
   it('should call http.delete with the correct URL', () => {
@@ -207,8 +192,13 @@ describe('deleteproduct()', () => {
 
     service.deleteproduct(mockProductId);
 
-    expect(httpClientSpy.delete.calls.count()).toBe(1, 'http.delete called once');
-    expect(httpClientSpy.delete.calls.argsFor(0)).toEqual([expectedUrl], 'correct URL passed to http.delete');
+    expect(httpClientSpy.delete.calls.count()).toBe(
+      1,
+      'http.delete called once'
+    );
+    expect(httpClientSpy.delete.calls.argsFor(0)).toEqual(
+      [expectedUrl],
+      'correct URL passed to http.delete'
+    );
   });
 });
-

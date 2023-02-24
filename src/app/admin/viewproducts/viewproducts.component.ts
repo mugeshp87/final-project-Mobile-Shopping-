@@ -27,6 +27,7 @@ export class ViewproductsComponent implements OnInit, OnChanges {
   @ViewChild(MatSort) sort!: MatSort;
   productvalue: any = [];
   id: any;
+  component: any;
 
   constructor(
     public service: AdminserviceService,
@@ -97,7 +98,6 @@ export class ViewproductsComponent implements OnInit, OnChanges {
   deleteproduct(id: number) {
     this.service.deleteproduct(id).subscribe((res) => {
       this.toastr.success('Product Deleted Successfully');
-      this.getproducts();
     });
   
   }

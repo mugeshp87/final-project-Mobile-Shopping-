@@ -1,10 +1,6 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import {
-  ActivatedRouteSnapshot,
-  Router,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdminGuard } from './admin.guard';
 
@@ -29,18 +25,16 @@ describe('AdminGuard', () => {
     let toastr: ToastrService;
     let router: Router;
     beforeEach(() => {
-      // Initialize guard, toastr service and router;
       toastr = TestBed.inject(ToastrService);
       router = TestBed.inject(Router);
-      // guard = TestBed.createguard(Yourguard).guardInstance;
+
       guard = TestBed.inject(AdminGuard);
     });
     it('should return true if LoggedInAdmin is set in localStorage', () => {
-      //Arrange
       spyOn(localStorage, 'getItem').and.returnValue('someValue');
-      //Act
+
       const result = guard.canActivate();
-      //Assert
+
       expect(result).toBeTrue();
     });
     it('should return false and redirect to home path if LoggedInAdmin is not set in localStorage', () => {
@@ -55,28 +49,3 @@ describe('AdminGuard', () => {
     });
   });
 });
-// import { TestBed } from '@angular/core/testing';
-// import { ToastrService } from 'ngx-toastr';
-
-// import { AdminGuard } from './admin.guard';
-
-// describe('AdminGuard', () => {
-//   let guard: AdminGuard;
-
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [
-//         {
-//           provide: ToastrService,
-//           useValue: ToastrService,
-//         },
-//       ],
-//     });
-//     guard = TestBed.inject(AdminGuard);
-//   });
-
-//   it('should be created', () => {
-//     expect(guard).toBeTruthy();
-//   });
-
-// });
